@@ -60,6 +60,11 @@
     <Compile Include="Assets\Scripts\UI\UI_Config.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Screen.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ScrambleWords.cs" />
+    <Compile Include="Assets\ScriptableObjects\ScrambleWords\ScrambleWords_Object.cs" />
+    <Compile Include="Assets\Scripts\Data\GameData.cs" />
+    <Compile Include="Assets\Scripts\ScrambleWordsScene.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Utilities.cs" />
+    <Compile Include="Assets\Scripts\GamePlayManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
