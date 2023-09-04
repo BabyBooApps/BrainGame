@@ -7,6 +7,10 @@ public class ScrambleWords_Char_Tile : MonoBehaviour
 {
     public TextMeshPro text_Obj;
     public string TileId;
+    public string Target_Id;
+    public Vector3 InitialPos;
+    public ScrambleWords_Target_Tile Target;
+    bool isPlacedAtTarget = false;
 
     void SetPosition(Vector3 pos)
     {
@@ -20,6 +24,7 @@ public class ScrambleWords_Char_Tile : MonoBehaviour
     public void SetTile(Vector3 pos, string c)
     {
         //SetPosition(pos);
+        InitialPos = pos;
         SetChar(c);
         SetTileId(c);
     }
@@ -30,37 +35,70 @@ public class ScrambleWords_Char_Tile : MonoBehaviour
 
     public void ValidateMove()
     {
-
+        if(TileId == Target_Id)
+        {
+            Debug.Log("Matched Tile");
+            isPlacedAtTarget = true;
+           // GetComponent<Collider2D>().enabled = false;
+            Fit_Target_Pos();
+            GamePlayManager.Instance.ScrambleWords_Level.On_Tile_Validated();
+        }else
+        {
+            Debug.Log("Tile Not Matched");
+            BackToInitialPos();
+        }
     }
     private void OnMouseUp()
     {
-        // Define the ray direction in the Z-axis for 2D
-        Vector2 rayDirection = Vector2.up; // This sends the ray upward in the Z-axis for 2D.
-        Vector2 rayOrigin = (Vector2)transform.position + (Vector2.up * 0.01f); // Offset by 0.01 units in the Z-axis
-        float rayLength = 5.0f;
-        Color rayColor = Color.red;
-        Vector2 rayOriginOffset = new Vector2(0f, 0.01f);
-        // Define the ray direction in the Z-axis for 2D
-       // Vector2 rayDirection = Vector2.up; // This sends the ray upward in the Z-axis for 2D.
+        ValidateMove();
+    }
 
-        // Calculate the ray's starting point
-       // Vector2 rayOrigin = (Vector2)transform.position + rayOriginOffset;
+    private void BackToInitialPos()
+    {
+        iTween.MoveTo(this.gameObject, InitialPos, 0.5f);
+    }
 
-        // Perform the 2D raycast
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, rayLength);
-
-        if (hit.collider != null)
+    private void Fit_Target_Pos()
+    {
+        if(Target != null)
         {
-            // Hit something
-            Debug.Log("Ray hit object: " + hit.collider.gameObject.name);
-
-            // Draw the ray for debugging (in red color)
-            Debug.DrawRay(rayOrigin, rayDirection * hit.distance, rayColor);
+            this.transform.position = Target.transform.position;
+            GetComponent<DraggableObject>().CanMove = false;
+            Target.IsFilled = true;
+            //Target.GetComponent<BoxCollider2D>().enabled = false;
         }
-        else
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
+        if(other.GetComponent<ScrambleWords_Target_Tile>())
         {
-            // Ray did not hit anything, so you can draw it as well
-            Debug.DrawRay(rayOrigin, rayDirection * rayLength, rayColor);
+            Debug.Log("Collided with : " + other.GetComponent<ScrambleWords_Target_Tile>().Target_tile_Id);
+            Target = other.GetComponent<ScrambleWords_Target_Tile>();
+            if(!Target.IsFilled)
+            {
+                Target_Id = Target.Target_tile_Id;
+                
+            }else
+            {
+                Target = null;
+            }
+            
+          
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<ScrambleWords_Target_Tile>())
+        {
+            if(!collision.GetComponent<ScrambleWords_Target_Tile>().IsFilled)
+            {
+                Debug.Log("Collision ended with : " + collision.GetComponent<ScrambleWords_Target_Tile>().Target_tile_Id);
+                Target = null;
+            }
+            
         }
     }
 }

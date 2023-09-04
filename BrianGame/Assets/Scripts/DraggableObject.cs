@@ -9,15 +9,16 @@ public class DraggableObject : MonoBehaviour
 
     private RaycastHit hit;
 
+    public bool CanMove = true;
+    
     private void Update()
     {
-        if (isDragging)
+        if (isDragging && CanMove)
         {
+
             // Calculate the new position based on mouse position and the offset
             Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
             transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
-
-
 
         }
     }

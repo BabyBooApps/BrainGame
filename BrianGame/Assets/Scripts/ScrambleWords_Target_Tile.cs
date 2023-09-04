@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScrambleWords_Target_Tile : MonoBehaviour
 {
     public string Target_tile_Id;
+    public bool IsFilled = false;
 
     public void SetTile(Vector3 Pos , string id)
     {

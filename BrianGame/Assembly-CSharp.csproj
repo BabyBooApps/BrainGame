@@ -61,14 +61,14 @@
     <Compile Include="Assets\Scripts\UI\UI_Manager.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Config.cs" />
     <Compile Include="Assets\Scripts\Utilities\Utilities.cs" />
+    <Compile Include="Assets\Scripts\ScrambleWords_Target_Tile.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ScrambleWords.cs" />
+    <Compile Include="Assets\Scripts\DraggableObject.cs" />
     <Compile Include="Assets\Scripts\ScrambleWordsScene.cs" />
     <Compile Include="Assets\ScriptableObjects\ScrambleWords\ScrambleWords_Object.cs" />
-    <Compile Include="Assets\Scripts\Data\GameData.cs" />
-    <Compile Include="Assets\Scripts\BeatAnimation.cs" />
-    <Compile Include="Assets\Scripts\DraggableObject.cs" />
     <Compile Include="Assets\Scripts\ScrambleWords_Char_Tile.cs" />
-    <Compile Include="Assets\Scripts\ScrambleWords_Target_Tile.cs" />
+    <Compile Include="Assets\Scripts\BeatAnimation.cs" />
+    <Compile Include="Assets\Scripts\Data\GameData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
