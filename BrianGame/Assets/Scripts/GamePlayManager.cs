@@ -26,7 +26,7 @@ public class GamePlayManager : MonoBehaviour
     void Start()
     {
         InitializeLevels();
-        ScrambleWords_Level.Initialize();
+       // ScrambleWords_Level.Initialize();
     }
 
     void InitializeLevels()

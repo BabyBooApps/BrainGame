@@ -8,6 +8,9 @@ public class GameData : MonoBehaviour
     [Header("ScrambleWords")]
     public List<ScrambleWords_Object> ScrambleWords_Items = new List<ScrambleWords_Object>();
 
+    [Header("Matching")]
+    public List<MatchingObject> Matching_Items = new List<MatchingObject>();
+
     private void Awake()
     {
         // Ensure that there's only one instance of GameManager.
