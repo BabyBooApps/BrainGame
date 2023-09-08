@@ -6,6 +6,7 @@ public class GamePlayManager : MonoBehaviour
 {
     public static GamePlayManager Instance;
     public ScrambleWordsScene ScrambleWords_Level;
+    public MatchingScene Matching_Level;
     private void Awake()
     {
         // Ensure that there's only one instance of GameManager.
@@ -32,5 +33,6 @@ public class GamePlayManager : MonoBehaviour
     void InitializeLevels()
     {
         ScrambleWords_Level = FindAnyObjectByType(typeof(ScrambleWordsScene)) as ScrambleWordsScene;
+        Matching_Level = FindObjectOfType(typeof(MatchingScene)) as MatchingScene;
     }
 }

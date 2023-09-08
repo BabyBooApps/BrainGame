@@ -26,7 +26,7 @@ public class Connector : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        LineScript.CanDrawLine = false;
+       
         if (LineScript.ConnectedObj != null)
         {
             Debug.Log("Connected with : " + LineScript.ConnectedObj.name);
@@ -37,6 +37,7 @@ public class Connector : MonoBehaviour
                 LineScript.SetEndPoint(LineScript.ConnectedObj.transform.position);
                 iTween.PunchScale(this.gameObject, new Vector3(1, 1, 1), 1.5f);
                 iTween.PunchScale(LineScript.ConnectedObj.gameObject, new Vector3(1, 1, 1), 1.5f);
+                GamePlayManager.Instance.Matching_Level.OnSuccessfulConnection();
             }
             else
             {
@@ -46,10 +47,18 @@ public class Connector : MonoBehaviour
             }
         }else
         {
+            ConnectionSuccess = false;
             LineScript.ResetLineRenderer();
         }
-       
+        LineScript.CanDrawLine = false;
 
+
+    }
+
+    public void ResetConnector()
+    {
+        ConnectionSuccess = false;
+        LineScript.ResetLine();
     }
 
 }

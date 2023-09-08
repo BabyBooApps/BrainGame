@@ -35,6 +35,8 @@ public class DrawLine : MonoBehaviour
             startPoint.z = 0;
             pivotPoint = startPoint;
 
+            Debug.Log("Line Renderer Object :" + this.gameObject.name);
+
             lineRenderer.SetPosition(0, this.transform.position);
             lineRenderer.SetPosition(1, this.transform.position);
         }
@@ -84,6 +86,9 @@ public class DrawLine : MonoBehaviour
 
     public void ResetLineRenderer()
     {
+
+    
+       
         lineRenderer.SetPosition(0, this.transform.position);
         lineRenderer.SetPosition(1, this.transform.position); // Clear all line positions
     }
@@ -93,8 +98,16 @@ public class DrawLine : MonoBehaviour
         if(ConnectedObj!= null)
         {
             lineRenderer.SetPosition(1, ConnectedObj.transform.position);
+            
         }
         
+    }
+
+    public void ResetLine()
+    {
+        lineRenderer.SetPosition(0, Vector3.zero);
+        lineRenderer.SetPosition(1, Vector3.zero);
+        CanDrawLine = false;
     }
 
 

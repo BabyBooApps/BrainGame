@@ -62,19 +62,19 @@
     <Compile Include="Assets\Scripts\UI\UI_Config.cs" />
     <Compile Include="Assets\Scripts\Utilities\Utilities.cs" />
     <Compile Include="Assets\Scripts\ScrambleWords_Target_Tile.cs" />
+    <Compile Include="Assets\Scripts\Matching\Normal_Object.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ScrambleWords.cs" />
+    <Compile Include="Assets\Scripts\Matching\DarkObject.cs" />
     <Compile Include="Assets\Scripts\DraggableObject.cs" />
+    <Compile Include="Assets\Scripts\Matching\Connector.cs" />
     <Compile Include="Assets\Scripts\ScrambleWordsScene.cs" />
     <Compile Include="Assets\ScriptableObjects\ScrambleWords\ScrambleWords_Object.cs" />
+    <Compile Include="Assets\ScriptableObjects\Matching\MatchingObject.cs" />
+    <Compile Include="Assets\Scripts\Matching\DrawLine.cs" />
     <Compile Include="Assets\Scripts\ScrambleWords_Char_Tile.cs" />
     <Compile Include="Assets\Scripts\BeatAnimation.cs" />
-    <Compile Include="Assets\Scripts\Data\GameData.cs" />
-    <Compile Include="Assets\ScriptableObjects\Matching\MatchingObject.cs" />
     <Compile Include="Assets\Scripts\Matching\MatchingScene.cs" />
-    <Compile Include="Assets\Scripts\Matching\Normal_Object.cs" />
-    <Compile Include="Assets\Scripts\Matching\Connector.cs" />
-    <Compile Include="Assets\Scripts\Matching\DarkObject.cs" />
-    <Compile Include="Assets\Scripts\Matching\DrawLine.cs" />
+    <Compile Include="Assets\Scripts\Data\GameData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
