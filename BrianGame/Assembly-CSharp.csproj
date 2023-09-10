@@ -75,6 +75,11 @@
     <Compile Include="Assets\Scripts\BeatAnimation.cs" />
     <Compile Include="Assets\Scripts\Matching\MatchingScene.cs" />
     <Compile Include="Assets\Scripts\Data\GameData.cs" />
+    <Compile Include="Assets\Scripts\HowMany\Container.cs" />
+    <Compile Include="Assets\Scripts\HowMany\AnswerTile.cs" />
+    <Compile Include="Assets\ScriptableObjects\HowMany\HowManyObj.cs" />
+    <Compile Include="Assets\Scripts\HowMany\HowMany_Level.cs" />
+    <Compile Include="Assets\Scripts\HowMany\Answer_Draggable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

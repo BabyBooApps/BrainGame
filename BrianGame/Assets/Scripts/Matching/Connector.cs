@@ -34,6 +34,7 @@ public class Connector : MonoBehaviour
             {
                 Debug.Log("Connection Success");
                 ConnectionSuccess = true;
+                
                 LineScript.SetEndPoint(LineScript.ConnectedObj.transform.position);
                 iTween.PunchScale(this.gameObject, new Vector3(1, 1, 1), 1.5f);
                 iTween.PunchScale(LineScript.ConnectedObj.gameObject, new Vector3(1, 1, 1), 1.5f);
@@ -58,6 +59,7 @@ public class Connector : MonoBehaviour
     public void ResetConnector()
     {
         ConnectionSuccess = false;
+
         LineScript.ResetLine();
     }
 

@@ -11,6 +11,9 @@ public class GameData : MonoBehaviour
     [Header("Matching")]
     public List<MatchingObject> Matching_Items = new List<MatchingObject>();
 
+    [Header("HowMany")]
+    public List<HowManyObj> HowMany_Items = new List<HowManyObj>();
+
     private void Awake()
     {
         // Ensure that there's only one instance of GameManager.
