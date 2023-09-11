@@ -14,6 +14,9 @@ public class GameData : MonoBehaviour
     [Header("HowMany")]
     public List<HowManyObj> HowMany_Items = new List<HowManyObj>();
 
+    [Header("Puzzle 2x2")]
+    public List<Puzzle_Tile> PuzzleTiles_2x2 = new List<Puzzle_Tile>();
+
     private void Awake()
     {
         // Ensure that there's only one instance of GameManager.

@@ -56,12 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ScriptableObjects\HowMany\HowManyObj.cs" />
+    <Compile Include="Assets\Scripts\HowMany\Answer_Draggable.cs" />
     <Compile Include="Assets\Scripts\GamePlayManager.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Screen.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Manager.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Config.cs" />
     <Compile Include="Assets\Scripts\Utilities\Utilities.cs" />
     <Compile Include="Assets\Scripts\ScrambleWords_Target_Tile.cs" />
+    <Compile Include="Assets\Scripts\HowMany\HowMany_Level.cs" />
     <Compile Include="Assets\Scripts\Matching\Normal_Object.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ScrambleWords.cs" />
     <Compile Include="Assets\Scripts\Matching\DarkObject.cs" />
@@ -73,13 +76,16 @@
     <Compile Include="Assets\Scripts\Matching\DrawLine.cs" />
     <Compile Include="Assets\Scripts\ScrambleWords_Char_Tile.cs" />
     <Compile Include="Assets\Scripts\BeatAnimation.cs" />
-    <Compile Include="Assets\Scripts\Matching\MatchingScene.cs" />
-    <Compile Include="Assets\Scripts\Data\GameData.cs" />
-    <Compile Include="Assets\Scripts\HowMany\Container.cs" />
     <Compile Include="Assets\Scripts\HowMany\AnswerTile.cs" />
-    <Compile Include="Assets\ScriptableObjects\HowMany\HowManyObj.cs" />
-    <Compile Include="Assets\Scripts\HowMany\HowMany_Level.cs" />
-    <Compile Include="Assets\Scripts\HowMany\Answer_Draggable.cs" />
+    <Compile Include="Assets\Scripts\Matching\MatchingScene.cs" />
+    <Compile Include="Assets\Scripts\HowMany\Container.cs" />
+    <Compile Include="Assets\Scripts\Data\GameData.cs" />
+    <Compile Include="Assets\ScriptableObjects\Puzzle\Puzzle_Tile.cs" />
+    <Compile Include="Assets\ScriptableObjects\Puzzle\Tile.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\PuzzleManager.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\Puzzle_Level.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\Puzzle_Target_Tile.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\Puzzle_Tile_Drag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
