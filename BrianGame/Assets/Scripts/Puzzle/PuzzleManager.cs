@@ -12,6 +12,7 @@ public class PuzzleManager : MonoBehaviour
    
     public int Score = 0;
    public int PuzzleIndex = 0;
+    public int SeverityLevel = 2;
 
     public Button Next_Item;
     
@@ -26,8 +27,8 @@ public class PuzzleManager : MonoBehaviour
     {
         // ResetLevel();
         Next_Item.gameObject.SetActive(false);
-        setActiveLevel(0);
-        InitializeLevel();
+        setActiveLevel(SeverityLevel);
+        InitializeLevel(SeverityLevel);
         Active_Level.Initiate_Puzzle(PuzzleIndex);
     }
 
@@ -43,9 +44,9 @@ public class PuzzleManager : MonoBehaviour
         Active_Level = Puzzle_Levels_List[index];
     }
 
-    public void InitializeLevel()
+    public void InitializeLevel(int level)
     {
-        Active_Level.InitializeLevel();
+        Active_Level.InitializeLevel(level);
     }
     
     public void OnPuzzle_Card_Placed()

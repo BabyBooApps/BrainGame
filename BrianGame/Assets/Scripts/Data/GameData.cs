@@ -17,6 +17,12 @@ public class GameData : MonoBehaviour
     [Header("Puzzle 2x2")]
     public List<Puzzle_Tile> PuzzleTiles_2x2 = new List<Puzzle_Tile>();
 
+    [Header("Puzzle 3x3")]
+    public List<Puzzle_Tile> PuzzleTiles_3x3 = new List<Puzzle_Tile>();
+
+    [Header("Puzzle 4x4")]
+    public List<Puzzle_Tile> PuzzleTiles_4x4 = new List<Puzzle_Tile>();
+
     private void Awake()
     {
         // Ensure that there's only one instance of GameManager.

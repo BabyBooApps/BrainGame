@@ -12,10 +12,10 @@ public class Puzzle_Level : MonoBehaviour
     public int id;
     public int TargetScore = 0;
 
-    public void InitializeLevel()
+    public void InitializeLevel(int level)
     {
         Init_Puzzle_Tiles();
-        Set_PuzzleTilesList();
+        Set_PuzzleTilesList(level);
         SetDraggingObject();
     }
     public List<Puzzle_Target_Tile> Init_Puzzle_Tiles()
@@ -33,17 +33,18 @@ public class Puzzle_Level : MonoBehaviour
         return Puzzle_Tiles_Target_Pos;
     }
 
-    public void Set_PuzzleTilesList()
+    public void Set_PuzzleTilesList(int level)
     {
-        if(id == 0)
+        if(level == 0)
         {
             Puzzle_Tiles_List = GameData.Instance.PuzzleTiles_2x2.Shuffle();
-        }else if(id == 1)
+        }else if(level == 1)
         {
-
-        }else if(id == 2)
+            Puzzle_Tiles_List = GameData.Instance.PuzzleTiles_3x3.Shuffle();
+        }
+        else if(level == 2)
         {
-
+            Puzzle_Tiles_List = GameData.Instance.PuzzleTiles_4x4.Shuffle();
         }
     }
 
