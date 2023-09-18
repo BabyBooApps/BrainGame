@@ -9,6 +9,7 @@ public class GamePlayManager : MonoBehaviour
     public MatchingScene Matching_Level;
     public HowMany_Level HowMany_Scene;
     public PuzzleManager Puzzle_Scene;
+    public Maths_Level Math_Level;
     private void Awake()
     {
         // Ensure that there's only one instance of GameManager.
@@ -38,5 +39,6 @@ public class GamePlayManager : MonoBehaviour
         Matching_Level = FindObjectOfType(typeof(MatchingScene)) as MatchingScene;
         HowMany_Scene = FindAnyObjectByType(typeof(HowMany_Level)) as HowMany_Level;
         Puzzle_Scene = FindAnyObjectByType(typeof(PuzzleManager)) as PuzzleManager;
+        Math_Level = FindAnyObjectByType(typeof(Maths_Level)) as Maths_Level;
     }
 }

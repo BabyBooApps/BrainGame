@@ -30,4 +30,9 @@ public static class Utilities
         List<char> charList = new List<char>(input.ToCharArray());
         return charList.Shuffle();
     }
+
+    public static int GetRandomNumber(int min, int max)
+    {
+        return Random.Range(min, max+1);
+    }
 }
