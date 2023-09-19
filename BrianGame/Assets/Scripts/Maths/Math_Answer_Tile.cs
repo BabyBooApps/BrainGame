@@ -11,10 +11,14 @@ public class Math_Answer_Tile : MonoBehaviour
     public GameObject collidedObj;
     public Vector3 initialPos;
 
+    private void Awake()
+    {
+        initialPos = this.transform.position;
+    }
     private void Start()
     {
         drag_Obj = GetComponent<DraggableObject>();
-        initialPos = this.transform.position;
+       
     }
     public void SetText(int val)
     {
@@ -52,7 +56,7 @@ public class Math_Answer_Tile : MonoBehaviour
                 Debug.Log("Answer Matched Successfully");
                 this.transform.position = obj.transform.position;
                 drag_Obj.CanMove = false;
-                GamePlayManager.Instance.Math_Level.addition_Level.OnAnswerValidated();
+                GamePlayManager.Instance.Math_Level.OnAnswerValidated();
             }else
             {
                 Debug.Log("Wrong Answer");
@@ -75,7 +79,9 @@ public class Math_Answer_Tile : MonoBehaviour
 
     public void ResetTile()
     {
+        if(drag_Obj)
         drag_Obj.CanMove = true;
+
         this.transform.position = initialPos;
     }
 }
