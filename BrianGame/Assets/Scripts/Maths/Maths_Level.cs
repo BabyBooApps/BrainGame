@@ -7,12 +7,13 @@ public class Maths_Level : MonoBehaviour
     public Math_Type mathType = Math_Type.Addition;
     public Addition_Level addition_Level;
     public Substraction substraction_Level;
+    public Multiplication Multiplication_Level;
 
 
     public QuestionArea Question;
     public List<int> Question_Elements = new List<int>();
     public int Answer;
-    public string MathType = "-";
+    public string MathType = "*";
     public AnswerContainer Answers_Container;
     public List<Math_Answer_Tile> Choice_Answer_Tiles = new List<Math_Answer_Tile>();
     public Result resultObj;
@@ -21,13 +22,14 @@ public class Maths_Level : MonoBehaviour
     public List<Math_Item> Items_List = new List<Math_Item>();
     public List<GameObject> SpawnedObjects = new List<GameObject>();
 
-    public float Max_Size = 0.75f;
+    float Max_Size = 0.6f;
     public GameObject GamePlayArea;
 
     private void Start()
     {
         addition_Level = FindAnyObjectByType(typeof(Addition_Level)) as Addition_Level;
         substraction_Level = FindAnyObjectByType(typeof(Substraction)) as Substraction;
+        Multiplication_Level = FindAnyObjectByType(typeof(Multiplication)) as Multiplication;
 
         resultObj.ResetScreen();
 
@@ -68,6 +70,11 @@ public class Maths_Level : MonoBehaviour
         {
             Answer = substraction_Level.Perform_Substraction(QuestionElements[0], QuestionElements[1]);
         }
+        else if (MathType == "*")
+        {
+            Answer = Multiplication_Level.Perform_Multiplication(QuestionElements[0], QuestionElements[1]);
+        }
+
 
 
 
@@ -119,16 +126,36 @@ public class Maths_Level : MonoBehaviour
                 SpawnedObjects.Add(currentGrid);
             }
 
-            for(int i = 0 ; i < SpawnedObjects.Count; i++)
+            for (int i = 0; i < SpawnedObjects.Count; i++)
             {
-                if(i >= (SpawnedObjects.Count - questionElement[1]))
+                if (i >= (SpawnedObjects.Count - questionElement[1]))
                 {
                     Color col = SpawnedObjects[i].GetComponent<SpriteRenderer>().color;
                     col.a = 0.3f;
                     SpawnedObjects[i].GetComponent<SpriteRenderer>().color = col;
 
-                   // SpawnedObjects[i].SetActive(false);
+                    // SpawnedObjects[i].SetActive(false);
                 }
+            }
+        }
+        else if (MathType == "*")
+        {
+            List<Vector3> PosList = Multiplication_Level.Get_Obj_Positions(questionElement);
+
+            for (int i = 0; i < PosList.Count; i++)
+            {
+                float objectSize = Max_Size / Mathf.Sqrt(questionElement[0] * 2);
+                objectSize = Mathf.Clamp(objectSize, 0.05f, Max_Size);
+                GameObject currentGrid = Instantiate(MathItem, Vector3.zero, Quaternion.identity);
+                // currentGrid.transform.parent = LeftGrid.transform;
+                currentGrid.transform.localPosition = PosList[i];
+                currentGrid.transform.localScale = new Vector3(objectSize, objectSize, 1);
+                currentGrid.GetComponent<SpriteRenderer>().sprite = sp;
+              
+                currentGrid.transform.localScale = Vector3.zero;
+                iTween.ScaleTo(currentGrid, new Vector3(objectSize, objectSize, 1), 1.0f);
+                iTween.PunchRotation(currentGrid, new Vector3(0, 0, 360), 1.0f);
+                SpawnedObjects.Add(currentGrid);
             }
         }
 
@@ -136,7 +163,7 @@ public class Maths_Level : MonoBehaviour
 
 
 
-    }
+        }
     public List<int> GenerateandGet_QuestionList()
     {
         Question_Elements.Clear();
@@ -149,9 +176,12 @@ public class Maths_Level : MonoBehaviour
         else if (MathType == "-")
         {
             Question_Elements.Add(Utilities.GetRandomNumber(1, num1));
+        }else if (MathType == "*")
+        {
+            Question_Elements.Add(Utilities.GetRandomNumber(1, 9));
         }
 
-        return Question_Elements;
+            return Question_Elements;
     }
 
 

@@ -8,11 +8,16 @@ public class DynamicGridManager : MonoBehaviour
 
     public int maxColumns = 3; // Maximum number of columns
     public int maxRows = 3;
-  
-   
+
+
 
     //public int maxColumns = 3; // Maximum number of columns
-    public float spacing = 2f; // Spacing between objects
+    float spacing_X = 0.5f; // Spacing between objects
+    float spacing_Y = 0.5f;
+
+    float min_Spacing = 0.1f;
+    float max_spacing = 2.0f;
+
 
     public List<Vector3> CalculateGridPositions(int numObjects)
     {
@@ -21,8 +26,8 @@ public class DynamicGridManager : MonoBehaviour
 
 
         // Calculate the starting position
-        float startX = -(maxColumns - 1) * spacing / 2f;
-        float startY = (numRows - 1) * spacing / 2f;
+        float startX = -(maxColumns - 1) * spacing_X / 2f;
+        float startY = (numRows - 1) * spacing_Y / 2f;
 
         for (int row = 0; row < numRows; row++)
         {
@@ -30,7 +35,7 @@ public class DynamicGridManager : MonoBehaviour
 
             for (int col = 0; col < rowObjectCount; col++)
             {
-                Vector3 objectPosition = new Vector3(startX + col * spacing, startY - row * spacing, 0f);
+                Vector3 objectPosition = new Vector3(startX + col * spacing_X, startY - row * spacing_Y, 0f);
                 objectPositions.Add(objectPosition);
             }
         }
@@ -45,8 +50,8 @@ public class DynamicGridManager : MonoBehaviour
         int numRows = Mathf.Min(maxRows, Mathf.CeilToInt((float)numObjects / maxColumns));
         int numColumns = Mathf.Min(maxColumns, Mathf.CeilToInt((float)numObjects / numRows));
 
-        float startX = -(numColumns - 1) * spacing / 2f;
-        float startY = (numRows - 1) * spacing / 2f;
+        float startX = -(numColumns - 1) * spacing_X / 2f;
+        float startY = (numRows - 1) * spacing_X / 2f;
 
         float objectSize = 1f / Mathf.Sqrt(numObjects); // Calculate the object size inversely based on the number of objects
 
@@ -57,8 +62,8 @@ public class DynamicGridManager : MonoBehaviour
                 int objectIndex = row * numColumns + col;
                 if (objectIndex < numObjects)
                 {
-                    float x = startX + col * spacing;
-                    float y = startY - row * spacing;
+                    float x = startX + col * spacing_X;
+                    float y = startY - row * spacing_X;
                     Vector3 objectPosition = new Vector3(x, y, 0f);
 
                     // Scale the object size
@@ -77,5 +82,38 @@ public class DynamicGridManager : MonoBehaviour
         }
 
         return worldPositions;
+    }
+
+    public List<Vector3> GenerateGrid(int rows, int columns)
+    {
+        spacing_X = Mathf.Lerp(min_Spacing, max_spacing, Mathf.Clamp01(2.0f / columns));
+        spacing_Y = Mathf.Lerp(min_Spacing, max_spacing, Mathf.Clamp01(2.0f / rows));
+
+
+        List<Vector3> objectPositions = new List<Vector3>();
+        // Calculate the half-width and half-height of the grid.
+        float halfWidth = (columns - 1) * spacing_X / 2;
+        float halfHeight = (rows - 1) * spacing_Y / 2;
+
+        // Get the position of the GridGenerator game object.
+        Vector3 gridGeneratorPosition = transform.position;
+
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                // Calculate the local position based on row, column, spacing, and the center.
+                Vector3 localPosition = new Vector3(col * spacing_X - halfWidth, row * spacing_Y - halfHeight, 0);
+
+                // Calculate the world position by adding the grid generator position to the local position.
+                Vector3 worldPosition = this.transform.TransformPoint(localPosition);
+
+                objectPositions.Add(worldPosition);
+
+                // Instantiate the gridObjectPrefab at the calculated world position.
+               // Instantiate(gridObjectPrefab, worldPosition, Quaternion.identity);
+            }
+        }
+        return objectPositions;
     }
 }

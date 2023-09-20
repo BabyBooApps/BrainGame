@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\UI\UI_Manager.cs" />
     <Compile Include="Assets\Scripts\Maths\QuestionArea.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Config.cs" />
+    <Compile Include="Assets\Scripts\Maths\Substraction\Substraction.cs" />
     <Compile Include="Assets\Scripts\Puzzle\Puzzle_Level.cs" />
     <Compile Include="Assets\Scripts\Puzzle\Puzzle_Target_Tile.cs" />
     <Compile Include="Assets\Scripts\Utilities\Utilities.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="Assets\Scripts\Matching\MatchingScene.cs" />
     <Compile Include="Assets\Scripts\HowMany\Container.cs" />
     <Compile Include="Assets\Scripts\Data\GameData.cs" />
-    <Compile Include="Assets\Scripts\Maths\Substraction\Substraction.cs" />
+    <Compile Include="Assets\Scripts\Maths\Multiplication\Multiplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
