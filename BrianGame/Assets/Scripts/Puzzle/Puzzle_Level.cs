@@ -64,18 +64,27 @@ public class Puzzle_Level : MonoBehaviour
 
     }
 
-    public void Initiate_Puzzle(int no)
+    public void Initiate_Puzzle(int no , int severity)
     {
-        Set_Puzzle_Backgrounds(no);
+        Set_Puzzle_Backgrounds(no,severity);
         SetDraggingObj_Backgrounds(no);
     }
 
-    public void Set_Puzzle_Backgrounds(int puzzle_no)
+    public void Set_Puzzle_Backgrounds(int puzzle_no , int severity)
     {
         for(int i = 0; i < Puzzle_Tiles_Target_Pos.Count; i++)
         {
-            Puzzle_Tiles_Target_Pos[i].Set_Sprite(Puzzle_Tiles_List[puzzle_no].puzzle_Sprites_List[i]);
+            float alpha = 75;
+            if (severity == 0)
+            {
+                alpha = 0.5f;
+            }else
+            {
+                alpha = 0.1f;
+            }
+            Puzzle_Tiles_Target_Pos[i].Set_Sprite(Puzzle_Tiles_List[puzzle_no].puzzle_Sprites_List[i] , alpha);
             Puzzle_Tiles_Target_Pos[i].setId(i);
+           
         }
     }
 

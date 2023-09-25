@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HowMany_Level : MonoBehaviour
 {
+    public Loading_Animation LoadingAnimation;
     public List<HowManyObj> HowMany_Level_Objects = new List<HowManyObj>();
     public List<Container> Container_List;
     public List<HowManyObj> Target_Id_List = new List<HowManyObj>();
@@ -12,15 +13,32 @@ public class HowMany_Level : MonoBehaviour
     public List<Answer_Draggable> Answer_Tiles = new List<Answer_Draggable>();
     public int Score = 0;
     public GameObject LogoObj;
-
+    public GameObject Object_Container;
+    public GameObject AnswerContainer;
     public Button NextBtn;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Initialize_Level();
+      
+    }
 
+    public void StartGamePlay()
+    {
+        StartCoroutine(Start_Level());
+    }
+
+    public IEnumerator Start_Level()
+    {
+        yield return new WaitForSeconds(0);
+        Initialize_Level();
+        Object_Container.SetActive(false);
+        AnswerContainer.SetActive(false);
+        yield return LoadingAnimation.Animate_Loading();
+        yield return new WaitForSeconds(0.5f);
+        Object_Container.SetActive(true);
+        AnswerContainer.SetActive(true);
         SetLevel();
     }
 
@@ -35,7 +53,7 @@ public class HowMany_Level : MonoBehaviour
         Target_Id_List.Clear();
         numberList.Clear();
         HowMany_Level_Objects.Clear();
-        NextBtn.gameObject.SetActive(false);
+        UI_Manager.Instance.HowMany_UI_Screen.Disable_Next_Btn();
 
         for(int i = 0; i < Container_List.Count; i++)
         {
@@ -116,7 +134,7 @@ public class HowMany_Level : MonoBehaviour
         if (Score >= Target_Id_List.Count)
         {
             Debug.Log("Level Completed Successfully");
-            NextBtn.gameObject.SetActive(true);
+            StartCoroutine(ActivateNextQuestion());
             // Initialize_Level();
             // SetLevel();
         }
@@ -124,6 +142,12 @@ public class HowMany_Level : MonoBehaviour
         {
             Debug.Log("Level NotCompleted ");
         }
+    }
+
+    public IEnumerator ActivateNextQuestion()
+    {
+        yield return new WaitForSeconds(1.0f);
+        UI_Manager.Instance.HowMany_UI_Screen.Enable_Next_Button();
     }
 
     public void OnNextClicked()

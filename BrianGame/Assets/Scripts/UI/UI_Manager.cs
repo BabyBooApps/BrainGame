@@ -8,6 +8,8 @@ public class UI_Manager : MonoBehaviour
     public UI_ScrambleWords ScrambleWords_Screen;
     public UI_HomeScreen HomeScreen;
     public UI_MenuScreen MenuScreen;
+    public UI_HowMany HowMany_UI_Screen;
+    public UI_Puzzle Puzzle_UI_Screen;
     private void Awake()
     {
         // Ensure that there's only one instance of GameManager.
@@ -64,4 +66,38 @@ public class UI_Manager : MonoBehaviour
     //        })
     //        .setEase(LeanTweenType.easeInOutSine);
     //}
+
+    public void InitializeScrambleWordsLevel()
+    {
+        GamePlayManager.Instance.InitializeScrambleWordsLevel();
+        MenuScreen.HideScreen();
+
+    }
+
+    public void InitializeMatchingLevel()
+    {
+        GamePlayManager.Instance.InitializeMatchingLevel();
+        MenuScreen.HideScreen();
+    }
+
+    public void InitializeHowManyLevel()
+    {
+        GamePlayManager.Instance.InitializeHowManyLevel();
+        MenuScreen.HideScreen();
+        HowMany_UI_Screen.ShowScreen();
+    }
+
+    public void ActivatePuzzleSelection()
+    {
+        //GamePlayManager.Instance.InitializePuzzleLevel();
+        Puzzle_UI_Screen.gameObject.SetActive(true);
+        MenuScreen.HideScreen();
+        Puzzle_UI_Screen.Activate_Puzzle_Selection_Screen();
+    }
+
+    public void InitializePuzzleLevel(int cardsCount , int severtity)
+    {
+        GamePlayManager.Instance.InitializePuzzleLevel(cardsCount ,severtity);
+        Puzzle_UI_Screen.Activate_Puzzle_Game_Screen();
+    }
 }

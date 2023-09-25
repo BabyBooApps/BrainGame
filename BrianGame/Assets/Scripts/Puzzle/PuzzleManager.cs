@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class PuzzleManager : MonoBehaviour
 {
-   
+    public Loading_Animation LoadingAnimation;
     public Puzzle_Level Active_Level;
     public List<Puzzle_Level> Puzzle_Levels_List = new List<Puzzle_Level>();
-    public Puzzle_Level Puzzle_2x2;
+  //  public Puzzle_Level Puzzle_2x2;
    
     public int Score = 0;
    public int PuzzleIndex = 0;
-    public int SeverityLevel = 2;
+    public int SeverityLevel = 1;
+    public int alphaVal = 0;
 
     public Button Next_Item;
     
@@ -20,23 +21,37 @@ public class PuzzleManager : MonoBehaviour
     void Start()
     {
 
-        initiatePuzzleLevel();
+        //initiatePuzzleLevel();
     }
 
-    public void initiatePuzzleLevel()
+    public void initiatePuzzleLevel(int cardsCount , int severity)
     {
         // ResetLevel();
+        StartCoroutine(ActivatePuzzleLevel(cardsCount, severity));
+    }
+
+    public IEnumerator ActivatePuzzleLevel(int cardsCount, int severity)
+    {
+        yield return LoadingAnimation.Animate_Loading();
+        yield return new WaitForSeconds(0.5f);
+
+        SeverityLevel = cardsCount;
+        alphaVal = severity;
         Next_Item.gameObject.SetActive(false);
         setActiveLevel(SeverityLevel);
         InitializeLevel(SeverityLevel);
-        Active_Level.Initiate_Puzzle(PuzzleIndex);
+        Active_Level.Initiate_Puzzle(PuzzleIndex, alphaVal);
+        Active_Level.gameObject.SetActive(true);
+
     }
 
     public void ReactivatePuzzle()
     {
         ResetLevel();
         Next_Item.gameObject.SetActive(false);
-        Active_Level.Initiate_Puzzle(PuzzleIndex);
+
+        Active_Level.Initiate_Puzzle(PuzzleIndex , alphaVal);
+        Active_Level.gameObject.SetActive(true);
     }
 
     public void setActiveLevel(int index)

@@ -90,4 +90,24 @@ public class UI_MenuScreen : UI_Screen
            
         }
     }
+
+    public void OnScrambleWordsButtonClick()
+    {
+        UI_Manager.Instance.InitializeScrambleWordsLevel();
+    }
+
+    public void OnMatchingSceneButtonClick()
+    {
+        UI_Manager.Instance.InitializeMatchingLevel();
+    }
+
+    public void OnHowManySceneClick()
+    {
+        UI_Manager.Instance.InitializeHowManyLevel();
+    }
+
+    public void OnPuzzleSceneClick()
+    {
+        UI_Manager.Instance.ActivatePuzzleSelection();
+    }
 }
