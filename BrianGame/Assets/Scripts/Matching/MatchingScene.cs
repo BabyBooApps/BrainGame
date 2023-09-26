@@ -161,5 +161,12 @@ public class MatchingScene : MonoBehaviour
         }
     }
 
+    public void DisableLevel()
+    {
+        ResetLevel();
+        LoadingAnimation.ResetLoading();
+        this.gameObject.SetActive(false);
+    }
+
 
 }

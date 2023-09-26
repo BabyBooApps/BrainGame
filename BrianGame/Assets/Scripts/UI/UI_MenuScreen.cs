@@ -33,9 +33,13 @@ public class UI_MenuScreen : UI_Screen
     }
     private void Start()
     {
-        StartCoroutine(AnimateToyandTitle());
+        
     }
 
+    public void InitializeMenuScreen()
+    {
+        StartCoroutine(AnimateToyandTitle());
+    }
     IEnumerator AnimateToyandTitle()
     {
         DisableButtons();
@@ -109,5 +113,26 @@ public class UI_MenuScreen : UI_Screen
     public void OnPuzzleSceneClick()
     {
         UI_Manager.Instance.ActivatePuzzleSelection();
+    }
+
+    public void OnMathSceneClick()
+    {
+        UI_Manager.Instance.ActivateMathSelectionScreen();
+    }
+
+    public void ResetToy()
+    {
+        ToyImage.transform.position = ToyImageInitialPosition;
+        ToyImage.transform.localScale = ToyImageInitialSize;
+
+        TitleImage.transform.position = TitleImageInitalPosition;
+        TitleImage.transform.localScale = TitleImageInitialSize;
+    }
+
+    public void OnHomeButtonClick()
+    {
+        ResetToy();
+        UI_Manager.Instance.BackToHome();
+        this.gameObject.SetActive(false);
     }
 }

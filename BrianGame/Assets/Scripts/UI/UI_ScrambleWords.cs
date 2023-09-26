@@ -14,5 +14,12 @@ public class UI_ScrambleWords : UI_Screen
         Debug.Log(UI_Config.Instance.ScrambleWords_Background.name);
     }
 
+    public void OnMenuButtonClicked()
+    {
+        UI_Manager.Instance.BackToMenu();
+        GamePlayManager.Instance.ScrambleWords_Level.DisableLevel();
+        this.gameObject.SetActive(false);
+    }
+
     
 }

@@ -8,3 +8,4 @@ Library/
 
 # Ignore the temp folder
 temp/
+*.apk

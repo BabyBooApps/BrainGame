@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Maths_Level : MonoBehaviour
 {
+    public Loading_Animation loadingAnimation;
+
     public Math_Type mathType = Math_Type.Addition;
     public Addition_Level addition_Level;
     public Substraction substraction_Level;
@@ -13,6 +15,7 @@ public class Maths_Level : MonoBehaviour
     public QuestionArea Question;
     public List<int> Question_Elements = new List<int>();
     public int Answer;
+    [SerializeField]
     public string MathType = "*";
     public AnswerContainer Answers_Container;
     public List<Math_Answer_Tile> Choice_Answer_Tiles = new List<Math_Answer_Tile>();
@@ -22,18 +25,18 @@ public class Maths_Level : MonoBehaviour
     public List<Math_Item> Items_List = new List<Math_Item>();
     public List<GameObject> SpawnedObjects = new List<GameObject>();
 
-    float Max_Size = 0.6f;
+    float Max_Size = 0.5f;
     public GameObject GamePlayArea;
 
     private void Start()
     {
-        addition_Level = FindAnyObjectByType(typeof(Addition_Level)) as Addition_Level;
-        substraction_Level = FindAnyObjectByType(typeof(Substraction)) as Substraction;
-        Multiplication_Level = FindAnyObjectByType(typeof(Multiplication)) as Multiplication;
+       // addition_Level = FindAnyObjectByType(typeof(Addition_Level)) as Addition_Level;
+       // substraction_Level = FindAnyObjectByType(typeof(Substraction)) as Substraction;
+       // Multiplication_Level = FindAnyObjectByType(typeof(Multiplication)) as Multiplication;
 
         resultObj.ResetScreen();
 
-        GenerateQuestion_Answer();
+       
 
     }
 
@@ -159,26 +162,34 @@ public class Maths_Level : MonoBehaviour
             }
         }
 
-
-
-
-
-        }
+    }
     public List<int> GenerateandGet_QuestionList()
     {
         Question_Elements.Clear();
         int num1 = Utilities.GetRandomNumber(1, 9);
-        Question_Elements.Add(num1);
+        int num2 = 0;
+       
         if (MathType == "+")
         {
-            Question_Elements.Add(Utilities.GetRandomNumber(1, 9));
+            num2 = Utilities.GetRandomNumber(1, 9);
+            Question_Elements.Add(num1);
+            Question_Elements.Add(num2);
+           
+            //Question_Elements.Add(Utilities.GetRandomNumber(1, 9));
         }
         else if (MathType == "-")
         {
-            Question_Elements.Add(Utilities.GetRandomNumber(1, num1));
+            num2 = Utilities.GetRandomNumber(1, num1);
+            Question_Elements.Add(num1);
+            Question_Elements.Add(num2);
+            
+            //Question_Elements.Add(Utilities.GetRandomNumber(1, num1));
         }else if (MathType == "*")
         {
-            Question_Elements.Add(Utilities.GetRandomNumber(1, 9));
+            num2 = Multiplication_Level.Multiplier;
+            Question_Elements.Add(num2);
+            Question_Elements.Add(num1);
+           // Question_Elements.Add(Multiplication_Level.Multiplier);
         }
 
             return Question_Elements;
@@ -228,6 +239,59 @@ public class Maths_Level : MonoBehaviour
     {
         Items_List.Clear();
         Items_List = GameData.Instance.Math_Level_Items.Shuffle();
+    }
+
+    public void SetMathType(Math_Type type)
+    {
+        mathType = type;
+
+        addition_Level.gameObject.SetActive(false);
+        substraction_Level.gameObject.SetActive(false) ;
+        Multiplication_Level.gameObject.SetActive(false);
+
+        if (type == Math_Type.Addition)
+        {
+            addition_Level.gameObject.SetActive(true);
+            MathType = "+";
+        }
+        else if (type == Math_Type.Subtraction)
+        {
+            substraction_Level.gameObject.SetActive(true);
+            MathType = "-";
+        }
+        else if (type == Math_Type.Multiplication)
+        {
+            Multiplication_Level.gameObject.SetActive(true);
+            MathType = "*";
+        }
+    }
+
+    public IEnumerator Start_Math_Level(Math_Type type)
+    {
+        Answers_Container.gameObject.SetActive(false);
+        Question.gameObject.SetActive(false);
+        yield return loadingAnimation.Animate_Loading();
+        yield return new WaitForSeconds(0.5f);
+        Answers_Container.gameObject.SetActive(true);
+        Question.gameObject.SetActive(true);
+        SetMathType(type);
+        GenerateQuestion_Answer();
+    }
+
+    public void Start_Level(Math_Type type)
+    {
+        StartCoroutine(Start_Math_Level(type));
+    }
+
+    public void DisableLevel()
+    {
+        loadingAnimation.ResetLoading();
+        resultObj.ResetScreen();
+        clearSpawnedObjects();
+        Answers_Container.gameObject.SetActive(false);
+        Question.gameObject.SetActive(false);
+
+        this.gameObject.SetActive(false);
     }
 
 

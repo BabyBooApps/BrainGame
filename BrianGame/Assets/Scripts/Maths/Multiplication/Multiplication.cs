@@ -5,6 +5,7 @@ using UnityEngine;
 public class Multiplication : MonoBehaviour
 {
     public DynamicGridManager Grid;
+    public int Multiplier = 1;
 
     public List<Vector3> Get_Obj_Positions(List<int> QuestionsList)
     {

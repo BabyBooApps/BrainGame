@@ -298,4 +298,14 @@ public class ScrambleWordsScene : MonoBehaviour
 
         }
     }
+
+    public void DisableLevel()
+    {
+        loadingAnimation.ResetLoading();
+        clearExistingItems();
+        TestIndex = 0;
+        MatchedTiles = 0;
+        this.gameObject.SetActive(false);
+
+    }
 }

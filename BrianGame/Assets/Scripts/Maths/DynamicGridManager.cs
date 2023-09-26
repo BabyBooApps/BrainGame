@@ -63,7 +63,7 @@ public class DynamicGridManager : MonoBehaviour
                 if (objectIndex < numObjects)
                 {
                     float x = startX + col * spacing_X;
-                    float y = startY - row * spacing_X;
+                    float y = startY - row * spacing_X ;
                     Vector3 objectPosition = new Vector3(x, y, 0f);
 
                     // Scale the object size
@@ -83,6 +83,52 @@ public class DynamicGridManager : MonoBehaviour
 
         return worldPositions;
     }
+
+    public List<Vector3> CalculateGridPositions_V3(int numObjects)
+    {
+        List<Vector3> objectPositions = new List<Vector3>();
+
+        // Calculate the number of rows and columns to fit the desired number of objects while maintaining symmetry
+        int numRows = Mathf.CeilToInt(Mathf.Sqrt(numObjects));
+        int numColumns = Mathf.CeilToInt((float)numObjects / numRows);
+
+        float objectSize = 1f * 0.5f / Mathf.Sqrt(numObjects); // Calculate the object size inversely based on the number of objects
+        float minObjectSize = 0.2f; // Set a minimum object size
+
+        // Adjust objectSize based on the number of objects
+        objectSize = Mathf.Max(objectSize, minObjectSize);
+
+        // Increase spacing_X and spacing_Y to increase the spacing between grid objects
+        float spacing_X = 1.2f;
+        float spacing_Y = 1.2f;
+
+        // Calculate the half-width and half-height of the grid based on the new spacing
+        float halfWidth = (numColumns - 1) * spacing_X / 2;
+        float halfHeight = (numRows - 1) * spacing_Y / 2;
+
+        for (int row = 0; row < numRows; row++)
+        {
+            for (int col = 0; col < numColumns; col++)
+            {
+                // Calculate the local position based on row, column, spacing, and the center.
+                Vector3 localPosition = new Vector3(col * spacing_X - halfWidth, row * spacing_Y - halfHeight, 0);
+
+                // Calculate the world position by adding the grid generator position to the local position.
+                Vector3 worldPosition = this.transform.TransformPoint(localPosition);
+
+                objectPositions.Add(worldPosition);
+
+                if (objectPositions.Count >= numObjects)
+                {
+                    // Stop adding positions once the desired number is reached
+                    return objectPositions;
+                }
+            }
+        }
+
+        return objectPositions;
+    }
+
 
     public List<Vector3> GenerateGrid(int rows, int columns)
     {

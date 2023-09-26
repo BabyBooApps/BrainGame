@@ -10,6 +10,8 @@ public class UI_Manager : MonoBehaviour
     public UI_MenuScreen MenuScreen;
     public UI_HowMany HowMany_UI_Screen;
     public UI_Puzzle Puzzle_UI_Screen;
+    public UI_Math Math_UI_Screen;
+    public UI_Matching Matching_UI_Screen;
     private void Awake()
     {
         // Ensure that there's only one instance of GameManager.
@@ -42,6 +44,7 @@ public class UI_Manager : MonoBehaviour
     {
         HomeScreen.gameObject.SetActive(false);
         MenuScreen.gameObject.SetActive(true);
+        MenuScreen.InitializeMenuScreen();
     }
 
     //public void StartScreenTransition(UI_Screen currentScreen , UI_Screen NextScreen)
@@ -70,6 +73,7 @@ public class UI_Manager : MonoBehaviour
     public void InitializeScrambleWordsLevel()
     {
         GamePlayManager.Instance.InitializeScrambleWordsLevel();
+        ScrambleWords_Screen.gameObject.SetActive(true);
         MenuScreen.HideScreen();
 
     }
@@ -77,6 +81,7 @@ public class UI_Manager : MonoBehaviour
     public void InitializeMatchingLevel()
     {
         GamePlayManager.Instance.InitializeMatchingLevel();
+        Matching_UI_Screen.gameObject.SetActive(true);
         MenuScreen.HideScreen();
     }
 
@@ -99,5 +104,35 @@ public class UI_Manager : MonoBehaviour
     {
         GamePlayManager.Instance.InitializePuzzleLevel(cardsCount ,severtity);
         Puzzle_UI_Screen.Activate_Puzzle_Game_Screen();
+    }
+
+    public void ActivateMathSelectionScreen()
+    {
+        Math_UI_Screen.gameObject.SetActive(true);
+        Math_UI_Screen.ActivateMathSelectionScreen();
+        MenuScreen.HideScreen();
+    }
+
+    public void Activate_Multiplcation_SelectionPopUp()
+    {
+        Math_UI_Screen.multiplication_PopUp.gameObject.SetActive(true);
+    }
+
+    public  void initializeMathLevel(Math_Type type)
+    {
+        GamePlayManager.Instance.InitializeMathLevel(type);
+        Math_UI_Screen.DeactivateMathSelectionScreen();
+        Math_UI_Screen.multiplication_PopUp.gameObject.SetActive(false);
+        MenuScreen.HideScreen();
+    }
+
+    public void BackToHome()
+    {
+        HomeScreen.gameObject.SetActive(true);
+    }
+
+    public void BackToMenu()
+    {
+        MenuScreen.gameObject.SetActive(true);
     }
 }

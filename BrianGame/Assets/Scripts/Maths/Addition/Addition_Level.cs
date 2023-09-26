@@ -12,8 +12,8 @@ public class Addition_Level : MonoBehaviour
     {
         List<Vector3> PosList = new List<Vector3>();
 
-        List<Vector3> LeftPosList = LeftGrid.CalculateGridPositions_V2(QuestionsList[0]);
-        List<Vector3> RightPosList = Right_Grid.CalculateGridPositions_V2(QuestionsList[1]);
+        List<Vector3> LeftPosList = LeftGrid.CalculateGridPositions_V3(QuestionsList[0]);
+        List<Vector3> RightPosList = Right_Grid.CalculateGridPositions_V3(QuestionsList[1]);
 
         for(int i = 0; i < LeftPosList.Count; i++)
         {

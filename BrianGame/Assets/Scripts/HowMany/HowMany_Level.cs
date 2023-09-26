@@ -161,7 +161,12 @@ public class HowMany_Level : MonoBehaviour
         iTween.PunchScale(LogoObj, new Vector3(1, 1, 1), 1.0f);
     }
 
-
+    public void DisableLevel()
+    {
+        LoadingAnimation.ResetLoading();
+        Initialize_Level();
+        this.gameObject.SetActive(false);
+    }
 
 
 

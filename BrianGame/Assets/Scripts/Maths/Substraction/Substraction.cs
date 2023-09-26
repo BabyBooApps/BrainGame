@@ -10,7 +10,7 @@ public class Substraction : MonoBehaviour
     {
         List<Vector3> PosList = new List<Vector3>();
 
-        PosList = Grid.CalculateGridPositions_V2(QuestionsList[0]);
+        PosList = Grid.CalculateGridPositions_V3(QuestionsList[0]);
 
         return PosList;
     }

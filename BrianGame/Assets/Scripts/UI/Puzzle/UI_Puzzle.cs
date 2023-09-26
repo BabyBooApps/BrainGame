@@ -40,4 +40,11 @@ public class UI_Puzzle : MonoBehaviour
     {
         UI_Manager.Instance.InitializePuzzleLevel(Get_Puzzle_Cards(), Get_Puzzle_Severity());
     }
+
+    public void OnMenuButtonClick()
+    {
+        GamePlayManager.Instance.Puzzle_Scene.DisableLevel();
+        UI_Manager.Instance.BackToMenu();
+        this.gameObject.SetActive(false);
+    }
 }

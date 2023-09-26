@@ -105,8 +105,15 @@ public class Puzzle_Level : MonoBehaviour
         {
             Dragging_Tile[i].ResetTile();
         }
-
+        
         //Puzzle_Tiles_Target_Pos.Clear();
+    }
+
+    public void DisableLevel()
+    {
+        Dragging_Tile.Clear();
+        Puzzle_Tiles_Target_Pos.Clear();
+        TargetScore = 0;
     }
 
 }

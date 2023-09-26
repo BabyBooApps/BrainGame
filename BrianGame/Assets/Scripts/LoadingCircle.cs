@@ -30,4 +30,9 @@ public class LoadingCircle : MonoBehaviour
     {
         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime);
     }
+
+    public void Reset_circle()
+    {
+        CanAnimate = false;
+    }
 }

@@ -40,8 +40,9 @@ public class PuzzleManager : MonoBehaviour
         Next_Item.gameObject.SetActive(false);
         setActiveLevel(SeverityLevel);
         InitializeLevel(SeverityLevel);
-        Active_Level.Initiate_Puzzle(PuzzleIndex, alphaVal);
         Active_Level.gameObject.SetActive(true);
+        Active_Level.Initiate_Puzzle(PuzzleIndex, alphaVal);
+      
 
     }
 
@@ -84,8 +85,25 @@ public class PuzzleManager : MonoBehaviour
 
     public void ResetLevel()
     {
+       
         Score = 0;
         Active_Level.ResetLevel();
+       
+       
+    }
+
+    public void DisableLevel()
+    {
+        LoadingAnimation.ResetLoading();
+        ResetLevel();
+        Active_Level.DisableLevel();
+        Active_Level.gameObject.SetActive(false);
+        Active_Level = null;
+        for (int i = 0; i < Puzzle_Levels_List.Count; i++)
+        {
+            Puzzle_Levels_List[i].gameObject.SetActive(false);
+        }
+        this.gameObject.SetActive(false);
     }
 
 

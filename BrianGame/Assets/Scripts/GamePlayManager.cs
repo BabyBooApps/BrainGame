@@ -40,7 +40,7 @@ public class GamePlayManager : MonoBehaviour
       //  Matching_Level = FindObjectOfType(typeof(MatchingScene)) as MatchingScene;
        // HowMany_Scene = FindAnyObjectByType(typeof(HowMany_Level)) as HowMany_Level;
        // Puzzle_Scene = FindAnyObjectByType(typeof(PuzzleManager)) as PuzzleManager;
-        Math_Level = FindAnyObjectByType(typeof(Maths_Level)) as Maths_Level;
+       // Math_Level = FindAnyObjectByType(typeof(Maths_Level)) as Maths_Level;
     }
 
     public void InitializeScrambleWordsLevel()
@@ -67,5 +67,11 @@ public class GamePlayManager : MonoBehaviour
         Puzzle_Scene.gameObject.SetActive(true);
         Puzzle_Scene.initiatePuzzleLevel(cardsCount , severity);
         
+    }
+
+    public void InitializeMathLevel(Math_Type type)
+    {
+        Math_Level.gameObject.SetActive(true);
+        Math_Level.Start_Level(type);
     }
 }
