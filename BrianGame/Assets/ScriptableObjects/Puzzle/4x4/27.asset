@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
+  m_Name: 27
+  m_EditorClassIdentifier: 
+  puzzle_Sprites_List:
+  - {fileID: 21300000, guid: 31c836bf43f609d44b53f268fa32f33a, type: 3}
+  - {fileID: 21300000, guid: 400cb6d0e834c994480df51455570488, type: 3}
+  - {fileID: 21300000, guid: d41e319f7e73ef849b7178f9fe83d6a1, type: 3}
+  - {fileID: 21300000, guid: 473e7165a64f13d418685e5c35b99323, type: 3}
+  - {fileID: 21300000, guid: 24d2e934178d78547847effcdf382b99, type: 3}
+  - {fileID: 21300000, guid: eaf25aa239e83674baf88fc087b320f1, type: 3}
+  - {fileID: 21300000, guid: fb19929299243b043b0c0a0fcbbd6316, type: 3}
+  - {fileID: 21300000, guid: 2041a752a4685db46964998bbfb0c5c5, type: 3}
+  - {fileID: 21300000, guid: 34cdfa982ae38ad419c0dcb105e37179, type: 3}
+  - {fileID: 21300000, guid: 7ab79be5eabbfd740964e1f70c7bbafb, type: 3}
+  - {fileID: 21300000, guid: 33bb65ee23cb3a042abc7b45ae829ef9, type: 3}
+  - {fileID: 21300000, guid: 79cc7d3f851129c4f956cf607b5b2b4f, type: 3}
+  - {fileID: 21300000, guid: bc4581adb7c66324c88eb001dfd98785, type: 3}
+  - {fileID: 21300000, guid: c940d289602457e4aa6c6fcfc39a99a5, type: 3}
+  - {fileID: 21300000, guid: 87d27daa48f8f054e829c0067eb2f2c0, type: 3}
+  - {fileID: 21300000, guid: 59aef24819f24ec44b6c2339dd741c2b, type: 3}

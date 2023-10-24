@@ -72,6 +72,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
+    <Compile Include="Assets\Scripts\UI\Math\UI_Math_Selection.cs" />
     <Compile Include="Assets\Scripts\Maths\QuestionArea.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Config.cs" />
     <Compile Include="Assets\Scripts\UI\UIBubbleAnimation.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEasingTypes.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
+    <Compile Include="Assets\Scripts\UI\Matching\UI_Matching.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\Scripts\Matching\DarkObject.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\LogoCinematic.cs" />
@@ -103,6 +105,8 @@
     <Compile Include="Assets\Scripts\DraggableObject.cs" />
     <Compile Include="Assets\Scripts\Matching\Connector.cs" />
     <Compile Include="Assets\Scripts\Maths\Maths_Level.cs" />
+    <Compile Include="Assets\Scripts\UI\Math\UI_Math.cs" />
+    <Compile Include="Assets\Scripts\UI\Math\UI_MultiplicationPopUP.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\Scripts\ScrambleWordsScene.cs" />
     <Compile Include="Assets\ScriptableObjects\ScrambleWords\ScrambleWords_Object.cs" />
@@ -143,10 +147,6 @@
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\Scripts\Data\GameData.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Scripts\UI\Math\UI_Math.cs" />
-    <Compile Include="Assets\Scripts\UI\Math\UI_Math_Selection.cs" />
-    <Compile Include="Assets\Scripts\UI\Math\UI_MultiplicationPopUP.cs" />
-    <Compile Include="Assets\Scripts\UI\Matching\UI_Matching.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -172,6 +172,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\SandalStudio\Snow FX\Shaider\Snow FX.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
