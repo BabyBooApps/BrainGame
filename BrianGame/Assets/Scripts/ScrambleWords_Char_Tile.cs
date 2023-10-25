@@ -97,6 +97,7 @@ public class ScrambleWords_Char_Tile : MonoBehaviour
             {
                 Debug.Log("Collision ended with : " + collision.GetComponent<ScrambleWords_Target_Tile>().Target_tile_Id);
                 Target = null;
+                Target_Id = "";
             }
             
         }

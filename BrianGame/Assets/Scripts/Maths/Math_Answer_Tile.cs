@@ -62,6 +62,10 @@ public class Math_Answer_Tile : MonoBehaviour
                 Debug.Log("Wrong Answer");
                 iTween.MoveTo(this.gameObject, initialPos, 1.0f);
             }
+        }else
+        {
+            Debug.Log("Wrong Tile");
+            iTween.MoveTo(this.gameObject, initialPos, 1.0f);
         }
     }
 

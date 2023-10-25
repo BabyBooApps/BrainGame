@@ -51,11 +51,38 @@ public class Maths_Level : MonoBehaviour
             Choice_Answer_Tiles[i].ResetTile();
         }
 
-        Choice_Answer_Tiles[0].SetText(Answer);
+        int[] distractors = GenerateDistractors(Answer);
+
+        /*Choice_Answer_Tiles[0].SetText(Answer);
         Choice_Answer_Tiles[1].SetText(Answer + Utilities.GetRandomNumber(1, 5));
-        Choice_Answer_Tiles[2].SetText(Answer + Utilities.GetRandomNumber(1, 5) + Utilities.GetRandomNumber(1, 3));
+        Choice_Answer_Tiles[2].SetText(Answer + Utilities.GetRandomNumber(1, 5) + Utilities.GetRandomNumber(1, 3));*/
 
+        // Set the text for the choice answer tiles
+        Choice_Answer_Tiles[0].SetText(Answer); // Correct answer
+        Choice_Answer_Tiles[1].SetText(distractors[0]); // Distractor 1
+        Choice_Answer_Tiles[2].SetText(distractors[1]); // Distractor 2
 
+    }
+
+    // Function to generate distractors
+    int[] GenerateDistractors(int answer)
+    {
+        int[] distractors = new int[2];
+
+        // Generate the first distractor using addition
+        distractors[0] = answer + Utilities.GetRandomNumber(1, 5);
+
+        // Generate the second distractor using subtraction
+        distractors[1] = answer - Utilities.GetRandomNumber(1, answer - 1);
+
+        // Ensure that distractors are different from each other and not equal to the correct answer
+        while (distractors[0] == distractors[1] || distractors[0] == answer || distractors[1] == answer)
+        {
+            distractors[0] = answer + Utilities.GetRandomNumber(1, 5);
+            distractors[1] = answer - Utilities.GetRandomNumber(1, answer-1);
+        }
+
+        return distractors;
     }
 
     public void GenerateQuestion_Answer()
@@ -179,7 +206,8 @@ public class Maths_Level : MonoBehaviour
         }
         else if (MathType == "-")
         {
-            num2 = Utilities.GetRandomNumber(1, num1);
+            num1 = Utilities.GetRandomNumber(4, 9);
+            num2 = Utilities.GetRandomNumber(1, num1-1);
             Question_Elements.Add(num1);
             Question_Elements.Add(num2);
             
