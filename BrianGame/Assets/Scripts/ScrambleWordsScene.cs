@@ -67,7 +67,7 @@ public class ScrambleWordsScene : MonoBehaviour
     public ScrambleWords_Char_Tile Tile_Prefab;
     public ScrambleWords_Target_Tile Target_Tile_Prefab;
 
-    public Vector3 Item_Anim_Pos = new Vector3(0, -3, 0);
+    public Vector3 Item_Anim_Pos = new Vector3(1f, -3, 0);
 
     public List<ScrambleWords_Object> GetScrambleWordsItems()
     {
