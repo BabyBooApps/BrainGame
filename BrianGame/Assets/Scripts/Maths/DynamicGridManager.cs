@@ -88,9 +88,20 @@ public class DynamicGridManager : MonoBehaviour
     {
         List<Vector3> objectPositions = new List<Vector3>();
 
-        // Calculate the number of rows and columns to fit the desired number of objects while maintaining symmetry
-        int numRows = Mathf.CeilToInt(Mathf.Sqrt(numObjects));
-        int numColumns = Mathf.CeilToInt((float)numObjects / numRows);
+        int numRows, numColumns;
+
+        // If numObjects is less than or equal to 3, place them in a single row
+        if (numObjects <= 3)
+        {
+            numRows = 1;
+            numColumns = numObjects;
+        }
+        else
+        {
+            // Calculate the number of rows and columns to fit the desired number of objects while maintaining symmetry
+            numRows = Mathf.CeilToInt(Mathf.Sqrt(numObjects));
+            numColumns = Mathf.CeilToInt((float)numObjects / numRows);
+        }
 
         float objectSize = 1f * 0.5f / Mathf.Sqrt(numObjects); // Calculate the object size inversely based on the number of objects
         float minObjectSize = 0.2f; // Set a minimum object size
