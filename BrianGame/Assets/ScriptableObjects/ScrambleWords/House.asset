@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5baf058e3103842aa6c27395be9785, type: 3}
   m_Name: House
   m_EditorClassIdentifier: 
-  Object_Image: {fileID: 21300000, guid: ce07662a53bd33241b66b82cf173ff43, type: 3}
-  Object_Name: House
+  Object_Image: {fileID: 21300000, guid: 18e09d1bc3a62bc499b4c2a54052f200, type: 3}
+  Object_Name: HOUSE

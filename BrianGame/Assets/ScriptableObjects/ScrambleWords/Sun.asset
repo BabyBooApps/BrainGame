@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5baf058e3103842aa6c27395be9785, type: 3}
   m_Name: Sun
   m_EditorClassIdentifier: 
-  Object_Image: {fileID: 21300000, guid: 6a9ed93f54ccd0745b784546afa0c4cf, type: 3}
-  Object_Name: Sun
+  Object_Image: {fileID: 21300000, guid: 8534b851665f37142982bcbf492bb03c, type: 3}
+  Object_Name: SUN

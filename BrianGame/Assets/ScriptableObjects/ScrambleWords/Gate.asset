@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5baf058e3103842aa6c27395be9785, type: 3}
   m_Name: Gate
   m_EditorClassIdentifier: 
-  Object_Image: {fileID: 21300000, guid: 9c12de78d931ad54aa14a5f792ce631e, type: 3}
-  Object_Name: Gate
+  Object_Image: {fileID: 21300000, guid: b2cb92d01534b58448b550a8c44c52f5, type: 3}
+  Object_Name: GATE

@@ -157,7 +157,7 @@ public class ScrambleWordsScene : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         DisableTiles();
         iTween.MoveTo(Item_Image.gameObject, Item_Anim_Pos, 1.0f);
-        iTween.ScaleTo(Item_Image.gameObject, new Vector3(1.0f, 1.0f, 1), 1f);
+        iTween.ScaleTo(Item_Image.gameObject, new Vector3(1.5f, 1.5f, 1), 1f);
         yield return new WaitForSeconds(0.5f);
         SetItemName_Object(true);
         yield return new WaitForSeconds(1.0f);

@@ -51,6 +51,7 @@ public class MatchingScene : MonoBehaviour
         {
             NormalObjectPlaceHolder_List[i].transform.localScale = Vector3.zero;
             NormalObjectPlaceHolder_List[i].GetComponent<SpriteRenderer>().enabled = false;
+            NormalObjectPlaceHolder_List[i].transform.parent.gameObject.SetActive(false);
             NormalObjectPlaceHolder_List[i].connector.gameObject.SetActive(false);
         }
 
@@ -58,6 +59,7 @@ public class MatchingScene : MonoBehaviour
         {
             DarkObjectPlaceHolder_List[i].transform.localScale = Vector3.zero;
             DarkObjectPlaceHolder_List[i].GetComponent<SpriteRenderer>().enabled = false;
+            DarkObjectPlaceHolder_List[i].transform.parent.gameObject.SetActive(false);
             DarkObjectPlaceHolder_List[i].connector.gameObject.SetActive(false);
         }
     }
@@ -86,8 +88,9 @@ public class MatchingScene : MonoBehaviour
         for (int i = 0; i < objList.Count; i++)
         {
             NormalObjectPlaceHolder_List[i].connector.gameObject.SetActive(true);
-            NormalObjectPlaceHolder_List[i].transform.localScale = new Vector3(0.3f, 0.3f, 1);
+            NormalObjectPlaceHolder_List[i].transform.localScale = new Vector3(0.5f, 0.5f, 1);
             NormalObjectPlaceHolder_List[i].GetComponent<SpriteRenderer>().enabled = true;
+            NormalObjectPlaceHolder_List[i].transform.parent.gameObject.SetActive(true);
             NormalObjectPlaceHolder_List[i].SetSprite(objList[i].NormalSprite);
             // iTween.PunchScale(NormalObjectPlaceHolder_List[i].gameObject, new Vector3(1.2f, 1.2f, 1), 0.9f);
             // iTween.PunchScale(NormalObjectPlaceHolder_List[i].gameObject, new Vector3(1.2f, 1.2f, 1), 0.9f,iTween.EaseType.easeOutElastic);
@@ -113,8 +116,9 @@ public class MatchingScene : MonoBehaviour
         for (int i = 0; i < objList.Count; i++)
         {
             DarkObjectPlaceHolder_List[i].connector.gameObject.SetActive(true);
-            DarkObjectPlaceHolder_List[i].transform.localScale = new Vector3(0.3f, 0.3f, 1);
+            DarkObjectPlaceHolder_List[i].transform.localScale = new Vector3(0.5f, 0.5f, 1);
             DarkObjectPlaceHolder_List[i].GetComponent<SpriteRenderer>().enabled = true;
+            DarkObjectPlaceHolder_List[i].transform.parent.gameObject.SetActive(true);
             DarkObjectPlaceHolder_List[i].SetSprite(objList[i].DarkSprite);
             DarkObjectPlaceHolder_List[i].connector.setId(objList[i].Id);
         }

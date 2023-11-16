@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd4ae153c1de7241b4d4dad33b7bb70, type: 3}
   m_Name: Swan
   m_EditorClassIdentifier: 
-  NormalSprite: {fileID: 21300000, guid: 3286435a38ce18f47b7b01656566df7e, type: 3}
-  DarkSprite: {fileID: 21300000, guid: 3ff7bf5c21dab834b9a06c45af274c67, type: 3}
+  NormalSprite: {fileID: 21300000, guid: 737e95be728e6d243a2f9e24b0589568, type: 3}
+  DarkSprite: {fileID: 21300000, guid: eb0b9c6259b94124aa5977dfdb8a35d5, type: 3}
   Id: 9

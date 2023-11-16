@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5baf058e3103842aa6c27395be9785, type: 3}
   m_Name: Ship
   m_EditorClassIdentifier: 
-  Object_Image: {fileID: 21300000, guid: 51885f0ccb01ea246947d5bb9ea49731, type: 3}
-  Object_Name: Ship
+  Object_Image: {fileID: 21300000, guid: e39a46cb22f0eb54da35c55d10f2ca6f, type: 3}
+  Object_Name: SHIP

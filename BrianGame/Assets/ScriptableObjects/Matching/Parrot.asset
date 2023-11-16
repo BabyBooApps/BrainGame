@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd4ae153c1de7241b4d4dad33b7bb70, type: 3}
   m_Name: Parrot
   m_EditorClassIdentifier: 
-  NormalSprite: {fileID: 21300000, guid: 5b534391b2ed5674c82dabcac8e35bc6, type: 3}
-  DarkSprite: {fileID: 21300000, guid: 770361c5ca7a39749ba8a12438af34f0, type: 3}
+  NormalSprite: {fileID: 21300000, guid: 0fec5d6f88f6a95439b7e8627f7457b2, type: 3}
+  DarkSprite: {fileID: 21300000, guid: 69bbbaa6b7f2f524fb65a1198d3c3497, type: 3}
   Id: 5

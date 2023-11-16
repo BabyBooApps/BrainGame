@@ -28,6 +28,9 @@ public class Maths_Level : MonoBehaviour
     float Max_Size = 0.5f;
     public GameObject GamePlayArea;
 
+    public List<Sprite> BG_List;
+    public SpriteRenderer Bg_Renderer;
+
     private void Start()
     {
        // addition_Level = FindAnyObjectByType(typeof(Addition_Level)) as Addition_Level;
@@ -280,22 +283,28 @@ public class Maths_Level : MonoBehaviour
         if (type == Math_Type.Addition)
         {
             addition_Level.gameObject.SetActive(true);
+            Bg_Renderer.sprite = BG_List[0];
             MathType = "+";
         }
         else if (type == Math_Type.Subtraction)
         {
             substraction_Level.gameObject.SetActive(true);
+            Bg_Renderer.sprite = BG_List[1];
             MathType = "-";
         }
         else if (type == Math_Type.Multiplication)
         {
             Multiplication_Level.gameObject.SetActive(true);
+            Bg_Renderer.sprite = BG_List[2];
             MathType = "*";
         }
     }
 
     public IEnumerator Start_Math_Level(Math_Type type)
     {
+        addition_Level.gameObject.SetActive(false);
+        substraction_Level.gameObject.SetActive(false);
+        Multiplication_Level.gameObject.SetActive(false);
         Answers_Container.gameObject.SetActive(false);
         Question.gameObject.SetActive(false);
         yield return loadingAnimation.Animate_Loading();

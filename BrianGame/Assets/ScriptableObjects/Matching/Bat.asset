@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd4ae153c1de7241b4d4dad33b7bb70, type: 3}
   m_Name: Bat
   m_EditorClassIdentifier: 
-  NormalSprite: {fileID: 21300000, guid: 748ed25703cef0f49b4bff33db9df5b5, type: 3}
-  DarkSprite: {fileID: 21300000, guid: 87566dde2f04bda4a8a55c932542c022, type: 3}
+  NormalSprite: {fileID: 21300000, guid: 5800815af3b6b204e8570c70e443ee38, type: 3}
+  DarkSprite: {fileID: 21300000, guid: 679e7352d1f3adf40961501984add2df, type: 3}
   Id: 1

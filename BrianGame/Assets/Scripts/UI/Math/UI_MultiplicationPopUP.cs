@@ -11,6 +11,12 @@ public class UI_MultiplicationPopUP : MonoBehaviour
         GamePlayManager.Instance.Math_Level.Multiplication_Level.Multiplier = Tables_Dropdown.value + 1;
     }
 
+    public void On_Table_Selected(int val)
+    {
+        GamePlayManager.Instance.Math_Level.Multiplication_Level.Multiplier = val;
+        UI_Manager.Instance.initializeMathLevel(Math_Type.Multiplication);
+    }
+
     public void OnOkClicked()
     {
         UI_Manager.Instance.initializeMathLevel(Math_Type.Multiplication);

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5baf058e3103842aa6c27395be9785, type: 3}
   m_Name: Trian
   m_EditorClassIdentifier: 
-  Object_Image: {fileID: 21300000, guid: f217ad69b63147743953e4be85f93fda, type: 3}
-  Object_Name: Train
+  Object_Image: {fileID: 21300000, guid: edab18cb12b228c4a8eb970098aa6d6d, type: 3}
+  Object_Name: TRAIN

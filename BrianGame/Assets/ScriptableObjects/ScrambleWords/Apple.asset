@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5baf058e3103842aa6c27395be9785, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  Object_Image: {fileID: 21300000, guid: 6b847f4e6b071e24c86ffd68d40aa96b, type: 3}
-  Object_Name: Apple
+  Object_Image: {fileID: 21300000, guid: 2909bde15ce7f9c45b465d9cb19ac9b3, type: 3}
+  Object_Name: APPLE

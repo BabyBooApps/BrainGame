@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5baf058e3103842aa6c27395be9785, type: 3}
   m_Name: Ant
   m_EditorClassIdentifier: 
-  Object_Image: {fileID: 21300000, guid: def70403830c007499b326d2eae22241, type: 3}
-  Object_Name: Ant
+  Object_Image: {fileID: 21300000, guid: c3ae9381c4bef0e439a8211e551485a8, type: 3}
+  Object_Name: ANT

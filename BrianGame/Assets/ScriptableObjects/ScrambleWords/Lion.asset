@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5baf058e3103842aa6c27395be9785, type: 3}
   m_Name: Lion
   m_EditorClassIdentifier: 
-  Object_Image: {fileID: 21300000, guid: 7db076c3f9072b44f9f8434fdb63d875, type: 3}
-  Object_Name: Lion
+  Object_Image: {fileID: 21300000, guid: f6e8da3733f09854c957c403bac55f40, type: 3}
+  Object_Name: LION

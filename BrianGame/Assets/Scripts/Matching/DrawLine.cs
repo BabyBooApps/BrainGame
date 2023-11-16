@@ -15,8 +15,8 @@ public class DrawLine : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 2;
-        lineRenderer.startWidth = 0.1f;
-        lineRenderer.endWidth = 0.1f;
+        lineRenderer.startWidth = 0.3f;
+        lineRenderer.endWidth = 0.3f;
         lineRenderer.useWorldSpace = true;
 
         lineRenderer.SetPosition(0, Vector3.zero);
@@ -33,7 +33,7 @@ public class DrawLine : MonoBehaviour
         {
             startPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             startPoint.z = 0;
-            pivotPoint = startPoint;
+            pivotPoint = this.transform.position;
 
             Debug.Log("Line Renderer Object :" + this.gameObject.name);
 

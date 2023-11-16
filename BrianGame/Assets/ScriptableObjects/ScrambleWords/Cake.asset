@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5baf058e3103842aa6c27395be9785, type: 3}
   m_Name: Cake
   m_EditorClassIdentifier: 
-  Object_Image: {fileID: 21300000, guid: daa071f15e55be84da275be1dbc87a43, type: 3}
-  Object_Name: Cake
+  Object_Image: {fileID: 21300000, guid: ced6b6f0ae2fed74aabd5821c979e562, type: 3}
+  Object_Name: CAKE

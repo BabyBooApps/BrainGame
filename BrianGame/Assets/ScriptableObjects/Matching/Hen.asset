@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd4ae153c1de7241b4d4dad33b7bb70, type: 3}
   m_Name: Hen
   m_EditorClassIdentifier: 
-  NormalSprite: {fileID: 21300000, guid: d2eeac4a3bf21ba41830e248dc731faf, type: 3}
-  DarkSprite: {fileID: 21300000, guid: fa55443e99cb9be41a8c67e9f1bf22c6, type: 3}
+  NormalSprite: {fileID: 21300000, guid: f30e953002338bf449e89dc6c9be9c52, type: 3}
+  DarkSprite: {fileID: 21300000, guid: a72d729e28f333c46a119f5c540abc4e, type: 3}
   Id: 2

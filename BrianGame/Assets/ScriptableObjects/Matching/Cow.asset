@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd4ae153c1de7241b4d4dad33b7bb70, type: 3}
   m_Name: Cow
   m_EditorClassIdentifier: 
-  NormalSprite: {fileID: 21300000, guid: 5601882f4ee7df64f9af09cfe6eb6200, type: 3}
-  DarkSprite: {fileID: 21300000, guid: 733772898a01c344db3ae1a244ba91ff, type: 3}
+  NormalSprite: {fileID: 21300000, guid: 35e602e754dae3943b16f20daa9662a6, type: 3}
+  DarkSprite: {fileID: 21300000, guid: 0680ec51e54186646b177874a8528afe, type: 3}
   Id: 18

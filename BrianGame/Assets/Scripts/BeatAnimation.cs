@@ -19,12 +19,12 @@ public class BeatAnimation : MonoBehaviour
     {
         if (CanAnimate)
         {
-            iTween.PunchScale(this.gameObject, new Vector3(0.5f, 0.5f, 0), 2.2f);
+            iTween.PunchScale(this.gameObject, new Vector3(1.0f, 1.0f, 0), 2.2f);
         }
     }
     void AnimateBeatDown()
     {
-        iTween.PunchScale(this.gameObject, new Vector3(0.5f, 0.5f, 0), 1.2f);
+        iTween.PunchScale(this.gameObject, new Vector3(1.0f, 1.0f, 0), 1.2f);
     }
 
     IEnumerator AnimateObject()
