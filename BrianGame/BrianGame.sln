@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{0DC12E55-46C4-D675-CF83-FDB8F3C8DDF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMobileAds.Editor", "GoogleMobileAds.Editor.csproj", "{8F32026F-E3D5-621E-C8BF-2055990A7532}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{ECA7DA2E-27F0-057C-7D25-CD4F47A046CE}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{0DC12E55-46C4-D675-CF83-FDB8F3C8DDF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DC12E55-46C4-D675-CF83-FDB8F3C8DDF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DC12E55-46C4-D675-CF83-FDB8F3C8DDF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F32026F-E3D5-621E-C8BF-2055990A7532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F32026F-E3D5-621E-C8BF-2055990A7532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F32026F-E3D5-621E-C8BF-2055990A7532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F32026F-E3D5-621E-C8BF-2055990A7532}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECA7DA2E-27F0-057C-7D25-CD4F47A046CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECA7DA2E-27F0-057C-7D25-CD4F47A046CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECA7DA2E-27F0-057C-7D25-CD4F47A046CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
