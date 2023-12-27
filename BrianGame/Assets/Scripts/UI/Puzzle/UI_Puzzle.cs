@@ -38,11 +38,13 @@ public class UI_Puzzle : MonoBehaviour
 
     public void OnStartPuzzleBtn_Click()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         UI_Manager.Instance.InitializePuzzleLevel(Get_Puzzle_Cards(), Get_Puzzle_Severity());
     }
 
     public void OnMenuButtonClick()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         GamePlayManager.Instance.Puzzle_Scene.DisableLevel();
         UI_Manager.Instance.BackToMenu();
         this.gameObject.SetActive(false);

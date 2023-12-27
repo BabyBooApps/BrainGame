@@ -38,13 +38,15 @@ public class ScrambleWords_Char_Tile : MonoBehaviour
         if(TileId == Target_Id)
         {
             Debug.Log("Matched Tile");
+            AudioManager.Instance.Play_Alphabet_Audio_Clip(TileId);
             isPlacedAtTarget = true;
            // GetComponent<Collider2D>().enabled = false;
             Fit_Target_Pos();
-            GamePlayManager.Instance.ScrambleWords_Level.On_Tile_Validated();
+             StartCoroutine( GamePlayManager.Instance.ScrambleWords_Level.On_Tile_Validated());
         }else
         {
             Debug.Log("Tile Not Matched");
+            AudioManager.Instance.PlayFailClip();
             BackToInitialPos();
         }
     }

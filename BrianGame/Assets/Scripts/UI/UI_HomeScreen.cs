@@ -9,6 +9,7 @@ public class UI_HomeScreen : UI_Screen
 
     public void On_MenuScreen_Button_Click()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         UI_Manager.Instance.MoveToMenuScreen();
     }
 

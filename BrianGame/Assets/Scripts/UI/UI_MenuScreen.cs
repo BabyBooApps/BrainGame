@@ -46,6 +46,8 @@ public class UI_MenuScreen : UI_Screen
         yield return new WaitForSeconds(0.5f);
         AnimateTitle();
         AnimateToy();
+        yield return new WaitForSeconds(0.2f);
+        AudioManager.Instance.Play_Move_Clip();
         yield return new WaitForSeconds(1.0f);
         yield return EnableButtons();
     }
@@ -53,6 +55,8 @@ public class UI_MenuScreen : UI_Screen
     void AnimateTitle()
     {
         RectTransform rectTransform = TitleImage.GetComponent<RectTransform>();
+
+        
 
         // Define the animation for position.
         LeanTween.move(rectTransform, Title_Image_Target_Transform.anchoredPosition, 1.0f)
@@ -86,8 +90,10 @@ public class UI_MenuScreen : UI_Screen
 
     public IEnumerator EnableButtons()
     {
+       
         for (int i = 0; i < Menu_Buttons_List.Count; i++)
         {
+            AudioManager.Instance.Play_CardFlip_Clip();
             Menu_Buttons_List[i].gameObject.SetActive(true);
             Menu_Buttons_List[i].EnableButton();
             yield return new WaitForSeconds(0.2f);
@@ -97,26 +103,31 @@ public class UI_MenuScreen : UI_Screen
 
     public void OnScrambleWordsButtonClick()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         UI_Manager.Instance.InitializeScrambleWordsLevel();
     }
 
     public void OnMatchingSceneButtonClick()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         UI_Manager.Instance.InitializeMatchingLevel();
     }
 
     public void OnHowManySceneClick()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         UI_Manager.Instance.InitializeHowManyLevel();
     }
 
     public void OnPuzzleSceneClick()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         UI_Manager.Instance.ActivatePuzzleSelection();
     }
 
     public void OnMathSceneClick()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         UI_Manager.Instance.ActivateMathSelectionScreen();
     }
 
@@ -131,6 +142,7 @@ public class UI_MenuScreen : UI_Screen
 
     public void OnHomeButtonClick()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         ResetToy();
         UI_Manager.Instance.BackToHome();
         this.gameObject.SetActive(false);

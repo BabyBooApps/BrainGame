@@ -94,6 +94,7 @@ public class ScrambleWordsScene : MonoBehaviour
     {
         if (active)
         {
+            AudioManager.Instance.Play_ScrambleWord_Item_Clip(Item_Name);
             Item_Name_Object.gameObject.SetActive(true);
             Item_Name_Object.text = Item_Name;
             Item_Name_Object.transform.localScale = Vector3.zero;
@@ -120,18 +121,21 @@ public class ScrambleWordsScene : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         SetPositionsOfTiles(ShuffledChar.Count);
+        AudioManager.Instance.Play_ItemFlipClip();
         StartCoroutine(SpawnCharTiles(ShuffledChar.Count));
         yield return new WaitForSeconds(1.0f);
         StartCoroutine(SpawnTargetTiles(ShuffledChar.Count));
     }
 
-    public void On_Tile_Validated()
+    public IEnumerator On_Tile_Validated()
     {
+        yield return new WaitForSeconds(1.0f);
         MatchedTiles++;
         if (MatchedTiles >= ShuffledChar.Count)
         {
             TestIndex++;
             Debug.Log("Word Matched Correctly");
+            AudioManager.Instance.PlaySuccessClip();
             StartCoroutine(MoveToNextItem());
 
         }
@@ -147,7 +151,10 @@ public class ScrambleWordsScene : MonoBehaviour
     {
         yield return StartCoroutine(SuccessAnimation());
         clearExistingItems();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
+        AudioManager.Instance.PlayNextLevelClip();
+        yield return new WaitForSeconds(1.0f);
+      
         StartCoroutine(SetTestItem(TestIndex));
     }
 
@@ -158,7 +165,7 @@ public class ScrambleWordsScene : MonoBehaviour
         DisableTiles();
         iTween.MoveTo(Item_Image.gameObject, Item_Anim_Pos, 1.0f);
         iTween.ScaleTo(Item_Image.gameObject, new Vector3(1.5f, 1.5f, 1), 1f);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         SetItemName_Object(true);
         yield return new WaitForSeconds(1.0f);
 

@@ -16,6 +16,8 @@ public class LoadingIcon : MonoBehaviour
     }
     public void Scale_And_Move_Icon(Transform targetPos)
     {
+        AudioManager.Instance.Play_Move_Clip();
+
         iTween.MoveTo(this.gameObject, targetPos.position, 1.0f);
         iTween.ScaleTo(this.gameObject, targetPos.localScale, 1.0f);
 

@@ -23,6 +23,7 @@ public class UI_Math : MonoBehaviour
 
     public void OnMenuButtonClicked()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         UI_Manager.Instance.BackToMenu();
         GamePlayManager.Instance.Math_Level.DisableLevel();
         this.gameObject.SetActive(false);

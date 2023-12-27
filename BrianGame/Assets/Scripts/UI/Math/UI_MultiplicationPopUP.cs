@@ -13,12 +13,14 @@ public class UI_MultiplicationPopUP : MonoBehaviour
 
     public void On_Table_Selected(int val)
     {
+        AudioManager.Instance.Play_Btn_CLick();
         GamePlayManager.Instance.Math_Level.Multiplication_Level.Multiplier = val;
         UI_Manager.Instance.initializeMathLevel(Math_Type.Multiplication);
     }
 
     public void OnOkClicked()
     {
+        AudioManager.Instance.Play_Btn_CLick();
         UI_Manager.Instance.initializeMathLevel(Math_Type.Multiplication);
     }
 }
