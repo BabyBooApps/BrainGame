@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 28
   m_EditorClassIdentifier: 
+  Puzzle_Id: giraffe
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 9e48521eb739b0641a7f18a2931494a4, type: 3}
   - {fileID: 21300000, guid: 40990900f20b603419226f7889849ca1, type: 3}

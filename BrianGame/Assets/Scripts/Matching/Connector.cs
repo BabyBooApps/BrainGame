@@ -32,6 +32,8 @@ public class Connector : MonoBehaviour
             Debug.Log("Connected with : " + LineScript.ConnectedObj.name);
             if(LineScript.ConnectedObj.id == id)
             {
+                AudioManager.Instance.Play_Correct_Answer_Clip();
+
                 Debug.Log("Connection Success");
                 ConnectionSuccess = true;
                 
@@ -42,6 +44,7 @@ public class Connector : MonoBehaviour
             }
             else
             {
+                AudioManager.Instance.PlayFailClip();
                 Debug.Log("Connection Wrong");
                 ConnectionSuccess = false;
                 LineScript.ResetLineRenderer();

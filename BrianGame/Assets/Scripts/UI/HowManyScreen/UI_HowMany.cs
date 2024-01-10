@@ -29,5 +29,7 @@ public class UI_HowMany : UI_Screen
         GamePlayManager.Instance.HowMany_Scene.DisableLevel();
         UI_Manager.Instance.BackToMenu();
         this.gameObject.SetActive(false);
+
+        AdsManager.Instance.interstitial.ShowAd();
     }
 }

@@ -135,7 +135,7 @@ public class ScrambleWordsScene : MonoBehaviour
         {
             TestIndex++;
             Debug.Log("Word Matched Correctly");
-            AudioManager.Instance.PlaySuccessClip();
+            AudioManager.Instance.Play_Cheering_Clip();
             StartCoroutine(MoveToNextItem());
 
         }
@@ -161,7 +161,7 @@ public class ScrambleWordsScene : MonoBehaviour
     IEnumerator SuccessAnimation()
     {
         Item_Image.GetComponent<BeatAnimation>().CanAnimate = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         DisableTiles();
         iTween.MoveTo(Item_Image.gameObject, Item_Anim_Pos, 1.0f);
         iTween.ScaleTo(Item_Image.gameObject, new Vector3(1.5f, 1.5f, 1), 1f);

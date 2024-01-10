@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 20
   m_EditorClassIdentifier: 
+  Puzzle_Id: tiger
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: a08a39c1649072c4faa93e54c353d27b, type: 3}
   - {fileID: 21300000, guid: ad68fc4a7d4a8e44db4edf89e118c6d1, type: 3}

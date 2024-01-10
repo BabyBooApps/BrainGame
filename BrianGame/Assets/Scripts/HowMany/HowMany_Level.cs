@@ -49,6 +49,8 @@ public class HowMany_Level : MonoBehaviour
 
     public void Initialize_Level()
     {
+        
+        AudioManager.Instance.PlayNextLevelClip();
         Score = 0;
         Target_Id_List.Clear();
         numberList.Clear();
@@ -130,9 +132,11 @@ public class HowMany_Level : MonoBehaviour
     public void OnAnswerMatched()
     {
         Score++;
+        AudioManager.Instance.Play_Correct_Answer_Clip();
         AnimateLogo();
         if (Score >= Target_Id_List.Count)
         {
+            AudioManager.Instance.PlayLevelCompleteClip();
             Debug.Log("Level Completed Successfully");
             StartCoroutine(ActivateNextQuestion());
             // Initialize_Level();
@@ -146,6 +150,7 @@ public class HowMany_Level : MonoBehaviour
 
     public IEnumerator ActivateNextQuestion()
     {
+        
         yield return new WaitForSeconds(1.0f);
         UI_Manager.Instance.HowMany_UI_Screen.Enable_Next_Button();
     }

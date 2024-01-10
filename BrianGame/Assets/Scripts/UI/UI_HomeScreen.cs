@@ -13,4 +13,9 @@ public class UI_HomeScreen : UI_Screen
         UI_Manager.Instance.MoveToMenuScreen();
     }
 
+    public void OnSettings_ButtonClick()
+    {
+        UI_Manager.Instance.OnSettings_Button_Click();
+    }
+
 }

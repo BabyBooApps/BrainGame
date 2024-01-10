@@ -53,17 +53,20 @@ public class Math_Answer_Tile : MonoBehaviour
         {
             if(obj.GetComponent<Math_Target_Answer>().GetId() == getId())
             {
+                AudioManager.Instance.Play_Correct_Answer_Clip();
                 Debug.Log("Answer Matched Successfully");
                 this.transform.position = obj.transform.position;
                 drag_Obj.CanMove = false;
                 GamePlayManager.Instance.Math_Level.OnAnswerValidated();
             }else
             {
+                AudioManager.Instance.PlayFailClip();
                 Debug.Log("Wrong Answer");
                 iTween.MoveTo(this.gameObject, initialPos, 1.0f);
             }
         }else
         {
+            AudioManager.Instance.PlayFailClip();
             Debug.Log("Wrong Tile");
             iTween.MoveTo(this.gameObject, initialPos, 1.0f);
         }

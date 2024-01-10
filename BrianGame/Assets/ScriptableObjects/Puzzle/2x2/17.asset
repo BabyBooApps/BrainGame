@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 17
   m_EditorClassIdentifier: 
+  Puzzle_Id: Aligator
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 8228bd58f6f7bc642adabe0ace9b30d2, type: 3}
   - {fileID: 21300000, guid: 9859ff3cae5a9a348b299fad673271b7, type: 3}

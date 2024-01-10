@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 19
   m_EditorClassIdentifier: 
+  Puzzle_Id: Monkey
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: f46b7f8a19d3cb04aa44de1d4560c0ee, type: 3}
   - {fileID: 21300000, guid: 5b6b2fd3530ac924881f257c6dc2a2b4, type: 3}

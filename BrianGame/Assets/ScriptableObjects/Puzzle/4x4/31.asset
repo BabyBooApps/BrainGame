@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 31
   m_EditorClassIdentifier: 
+  Puzzle_Id: elephant
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 209f074fe3db8384a938c85eaa96a36b, type: 3}
   - {fileID: 21300000, guid: bf55ae5e9e81c584dbe2101391387b1e, type: 3}

@@ -244,6 +244,7 @@ public class Maths_Level : MonoBehaviour
     public void OnAnswerValidated()
     {
         resultObj.gameObject.SetActive(true);
+        AudioManager.Instance.PlayLevelCompleteClip();
         StartCoroutine(AnimateResult());
 
 
@@ -252,6 +253,7 @@ public class Maths_Level : MonoBehaviour
     public IEnumerator AnimateResult()
     {
         yield return resultObj.AnimateResult();
+        AudioManager.Instance.PlayNextLevelClip();
         clearSpawnedObjects();
         GenerateQuestion_Answer();
     }

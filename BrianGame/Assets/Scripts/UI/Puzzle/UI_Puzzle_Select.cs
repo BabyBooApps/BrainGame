@@ -6,5 +6,10 @@ public class UI_Puzzle_Select : MonoBehaviour
 {
     public List<RadioButtonGroup> RadioButton_Groups;
 
+    public void Puzzle_Card_Select()
+    {
+        AudioManager.Instance.Play_Btn_CLick();
+    }
+
 
 }

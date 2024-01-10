@@ -11,19 +11,19 @@ public class UI_Math_Selection : MonoBehaviour
 
     public void OnAdditionButtonClick()
     {
-        AudioManager.Instance.Play_Btn_CLick();
+        AudioManager.Instance.Play_Addition_Clip();
         UI_Manager.Instance.initializeMathLevel(Math_Type.Addition);
     }
 
     public void OnSubstractionButtonClick()
     {
-        AudioManager.Instance.Play_Btn_CLick();
+        AudioManager.Instance.Play_Substraction_Clip();
         UI_Manager.Instance.initializeMathLevel(Math_Type.Subtraction);
     }
 
     public void OnMultiplicationButtonClick()
     {
-        AudioManager.Instance.Play_Btn_CLick();
+        AudioManager.Instance.Play_multipplication_clip();
         UI_Manager.Instance.Activate_Multiplcation_SelectionPopUp();
     }
 

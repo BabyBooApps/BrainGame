@@ -58,7 +58,7 @@ public class Puzzle_Level : MonoBehaviour
                 Dragging_Tile.Add(tile);
             }
 
-            Dragging_Tile = Dragging_Tile.Shuffle();
+             Dragging_Tile.Shuffle();
         }
 
 

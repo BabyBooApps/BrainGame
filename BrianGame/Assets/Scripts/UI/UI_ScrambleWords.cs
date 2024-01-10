@@ -20,6 +20,8 @@ public class UI_ScrambleWords : UI_Screen
         UI_Manager.Instance.BackToMenu();
         GamePlayManager.Instance.ScrambleWords_Level.DisableLevel();
         this.gameObject.SetActive(false);
+
+        AdsManager.Instance.interstitial.ShowAd();
     }
 
     

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: 
+  Puzzle_Id: Parrot
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: ea68640608cfb6047b4e9ee974eb074c, type: 3}
   - {fileID: 21300000, guid: c01f8fc1069841d4fa36513342b5f5bc, type: 3}

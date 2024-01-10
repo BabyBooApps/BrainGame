@@ -53,6 +53,7 @@ public class Answer_Draggable : MonoBehaviour
             }else
             {
                 Debug.Log("Not Matched");
+                AudioManager.Instance.PlayFailClip();
                 iTween.MoveTo(this.gameObject, StartingPos, 0.5f);
             }
         }else

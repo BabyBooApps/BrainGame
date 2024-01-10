@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 7
   m_EditorClassIdentifier: 
+  Puzzle_Id: Eagle
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 1f51818a3f0cdb54da87f6d75597afd2, type: 3}
   - {fileID: 21300000, guid: 7993454e56601874893dd09ef03f41d9, type: 3}

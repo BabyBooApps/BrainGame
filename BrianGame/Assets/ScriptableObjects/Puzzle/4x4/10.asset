@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 10
   m_EditorClassIdentifier: 
+  Puzzle_Id: NIghtingale
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 8cc261c0330bce84c87e0320e9430e32, type: 3}
   - {fileID: 21300000, guid: b4092f6cc2865c14aa2f2ff31dbf70b4, type: 3}

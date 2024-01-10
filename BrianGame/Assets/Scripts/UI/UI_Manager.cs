@@ -12,6 +12,7 @@ public class UI_Manager : MonoBehaviour
     public UI_Puzzle Puzzle_UI_Screen;
     public UI_Math Math_UI_Screen;
     public UI_Matching Matching_UI_Screen;
+    public Settings_Screen settings_Screen;
     private void Awake()
     {
         // Ensure that there's only one instance of GameManager.
@@ -134,5 +135,10 @@ public class UI_Manager : MonoBehaviour
     public void BackToMenu()
     {
         MenuScreen.gameObject.SetActive(true);
+    }
+
+    public void OnSettings_Button_Click()
+    {
+        settings_Screen.gameObject.SetActive(true);
     }
 }

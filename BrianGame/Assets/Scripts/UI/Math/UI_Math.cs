@@ -27,5 +27,7 @@ public class UI_Math : MonoBehaviour
         UI_Manager.Instance.BackToMenu();
         GamePlayManager.Instance.Math_Level.DisableLevel();
         this.gameObject.SetActive(false);
+
+        AdsManager.Instance.interstitial.ShowAd();
     }
 }

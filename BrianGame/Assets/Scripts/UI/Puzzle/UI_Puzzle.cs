@@ -48,5 +48,6 @@ public class UI_Puzzle : MonoBehaviour
         GamePlayManager.Instance.Puzzle_Scene.DisableLevel();
         UI_Manager.Instance.BackToMenu();
         this.gameObject.SetActive(false);
+        AdsManager.Instance.interstitial.ShowAd();
     }
 }

@@ -48,6 +48,7 @@ public class PuzzleManager : MonoBehaviour
 
     public void ReactivatePuzzle()
     {
+        AudioManager.Instance.PlayNextLevelClip();
         ResetLevel();
         Next_Item.gameObject.SetActive(false);
 
@@ -68,9 +69,11 @@ public class PuzzleManager : MonoBehaviour
     public void OnPuzzle_Card_Placed()
     {
         Score++;
+      
 
         if(Score >= Active_Level.TargetScore)
         {
+            AudioManager.Instance.PlayLevelCompleteClip();
             Debug.Log("level Completed Successfully");
             PuzzleIndex++;
             Next_Item.gameObject.SetActive(true);

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 18
   m_EditorClassIdentifier: 
+  Puzzle_Id: turtle
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 39415c7fe70482c45a81608d8961ae3e, type: 3}
   - {fileID: 21300000, guid: 86d71e8c282d8344fbadb2433013d666, type: 3}

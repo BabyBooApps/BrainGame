@@ -87,6 +87,7 @@ public class MatchingScene : MonoBehaviour
     {
         for (int i = 0; i < objList.Count; i++)
         {
+            AudioManager.Instance.Play_CardFlip_Clip();
             NormalObjectPlaceHolder_List[i].connector.gameObject.SetActive(true);
             NormalObjectPlaceHolder_List[i].transform.localScale = new Vector3(0.5f, 0.5f, 1);
             NormalObjectPlaceHolder_List[i].GetComponent<SpriteRenderer>().enabled = true;
@@ -137,6 +138,7 @@ public class MatchingScene : MonoBehaviour
         MatchCount++;
         if (MatchCount >= 4)
         {
+            AudioManager.Instance.PlayLevelCompleteClip();
             Debug.Log("Game Successful");
             yield return new WaitForSeconds(1.5f);
             ResetLevel();

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 8
   m_EditorClassIdentifier: 
+  Puzzle_Id: ostrich
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: c5ecfbf4185454b43b34fb1eac8164e6, type: 3}
   - {fileID: 21300000, guid: 1305caa025103b4458e2cb5059a48242, type: 3}

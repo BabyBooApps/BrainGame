@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Puzzle_Tile : ScriptableObject
 {
+    public string Puzzle_Id = "";
     public List<Sprite> puzzle_Sprites_List = new List<Sprite>();
    
 }

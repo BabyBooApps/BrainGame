@@ -146,5 +146,7 @@ public class UI_MenuScreen : UI_Screen
         ResetToy();
         UI_Manager.Instance.BackToHome();
         this.gameObject.SetActive(false);
+
+        AdsManager.Instance.interstitial.ShowAd();
     }
 }

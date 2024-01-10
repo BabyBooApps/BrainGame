@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 24
   m_EditorClassIdentifier: 
+  Puzzle_Id: panda
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: b56f2ef554f75f94da100b1bb79287c2, type: 3}
   - {fileID: 21300000, guid: 1b268f754e982ab40aa5e99fbd2c4096, type: 3}

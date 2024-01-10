@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource SoundClip_AudioSource;
 
     public float backgroundMusicVolume;
+    public float SoundEffectsVolume;
 
     public AudioClip BackgroundClip;
     public AudioClip ButtonClick;
@@ -23,8 +24,18 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> AlphabetsAudioclips = new List<AudioClip>();
     public List<AudioClip> FailClips = new List<AudioClip>();
     public List<AudioClip> SuccessClips = new List<AudioClip>();
+    public List<AudioClip> Level_Complete_Clips = new List<AudioClip>();
     public List<AudioClip> ScrambleWords_Obj_List = new List<AudioClip>();
     public List<AudioClip> NextLevelClips = new List<AudioClip>();
+
+    public AudioClip Addition_Clip;
+    public AudioClip Substraction_Clip;
+    public AudioClip Multiplication_Clip;
+
+    public AudioClip CheeringClip;
+
+    public List<AudioClip> Num_Clip = new List<AudioClip>();
+
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -40,15 +51,59 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+      
         GetandSetAudioSources();
+        SetAudioVolumes();
         PlayBackgroundMusic();
-        SetBgVolume(backgroundMusicVolume);
+        
+    }
+
+    public void SetAudioVolumes()
+    {
+
+        // Check if the key has been set
+        if (PlayerPrefs.HasKey("BgSoundsON"))
+        {
+            if (PlayerPrefs.GetInt("BgSoundsON") == 1)
+            {
+                SetBgVolume(backgroundMusicVolume);
+            }
+            else
+            {
+                SetBgVolume(0);
+            }
+        }
+        else
+        {
+            UI_Manager.Instance.settings_Screen.On_BG_Music_On_Btn_Click();
+        }
+
+
+        if (PlayerPrefs.HasKey("SoundEffectsOn"))
+        {
+            if (PlayerPrefs.GetInt("SoundEffectsOn") == 1)
+            {
+                SetSoundEffectsVolume(SoundEffectsVolume);
+            }
+            else
+            {
+                SetSoundEffectsVolume(0);
+            }
+        }else
+        {
+            UI_Manager.Instance.settings_Screen.On_Sound_Effects_On_Btn_Click();
+        }
+            
     }
 
     public void SetBgVolume(float vol)
     {
         Background_AudioSource.volume = vol;
+    }
+
+    public void SetSoundEffectsVolume(float vol)
+    {
+        SoundClip_AudioSource.volume = vol;
     }
 
     public void GetandSetAudioSources()
@@ -126,6 +181,10 @@ public class AudioManager : MonoBehaviour
     }
 
 
+   public void Play_Cheering_Clip()
+    {
+        PlayAudioClip(CheeringClip);
+    }
 
     public void PlayFailClip()
     {
@@ -133,7 +192,13 @@ public class AudioManager : MonoBehaviour
         PlayAudioClip(clip);
     }
 
-    public void PlaySuccessClip()
+    public void PlayLevelCompleteClip()
+    {
+        AudioClip clip = Level_Complete_Clips.GetRandomElement();
+        PlayAudioClip(clip);
+    }
+
+    public void Play_Correct_Answer_Clip()
     {
         AudioClip clip = SuccessClips.GetRandomElement();
         PlayAudioClip(clip);
@@ -142,6 +207,36 @@ public class AudioManager : MonoBehaviour
     public void PlayNextLevelClip()
     {
         AudioClip clip = NextLevelClips.GetRandomElement();
+        PlayAudioClip(clip);
+    }
+
+    public void Play_Addition_Clip()
+    {
+        PlayAudioClip(Addition_Clip);
+    }
+
+    public void Play_Substraction_Clip()
+    {
+        PlayAudioClip(Substraction_Clip);
+    }
+
+    public void Play_multipplication_clip()
+    {
+        PlayAudioClip(Multiplication_Clip);
+    }
+
+    public void Play_Num_Clip(int num)
+    {
+        AudioClip clip = null;
+
+        for(int i = 0;  i < Num_Clip.Count; i++)
+        {
+            if(num.ToString() == Num_Clip[i].name)
+            {
+                clip = Num_Clip[i];
+            }
+        }
+
         PlayAudioClip(clip);
     }
 

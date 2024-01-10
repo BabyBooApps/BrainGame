@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 11
   m_EditorClassIdentifier: 
+  Puzzle_Id: Deer
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: b8172d8fb56329c44844b8fcb8660fff, type: 3}
   - {fileID: 21300000, guid: 56d77c300f572b24393347d476c8079d, type: 3}

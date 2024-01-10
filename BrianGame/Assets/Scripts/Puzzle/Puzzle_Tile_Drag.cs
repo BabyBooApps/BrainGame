@@ -53,16 +53,21 @@ public class Puzzle_Tile_Drag : MonoBehaviour
         Debug.Log("distance : " +distance);
         if(distance < 1.2f)
         {
+            AudioManager.Instance.Play_Correct_Answer_Clip();
             iTween.MoveTo(this.gameObject, new Vector3(Match_Pos.x,Match_Pos.y,-1), 0.2f);
             drag_script.CanMove = false;
             isAligned = true;
             GamePlayManager.Instance.Puzzle_Scene.OnPuzzle_Card_Placed();
+           
         }
         else
         {
+            AudioManager.Instance.PlayFailClip();
             iTween.ScaleTo(this.gameObject, InitialSize, 0.5f);
             iTween.MoveTo(this.gameObject, initialPos, 1.0f);
         }
+        
+           
         //Vector3 pos = this.transform.position;
         //if(Mathf.Abs(pos.x - Match_Pos.x) < 50 )
         //{

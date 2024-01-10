@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
+  Puzzle_Id: Owl
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 1c8a955ca5a02614ab97f84ea2f21f66, type: 3}
   - {fileID: 21300000, guid: e27fbccc7ebab744c8b2bee38e003064, type: 3}

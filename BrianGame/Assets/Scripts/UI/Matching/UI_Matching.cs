@@ -10,5 +10,7 @@ public class UI_Matching : MonoBehaviour
         GamePlayManager.Instance.Matching_Level.DisableLevel();
         UI_Manager.Instance.BackToMenu();
         this.gameObject.SetActive(false);
+
+        AdsManager.Instance.interstitial.ShowAd();
     }
 }
