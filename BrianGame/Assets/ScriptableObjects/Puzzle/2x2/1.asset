@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   Puzzle_Id: Owl
+  FInal_Image: {fileID: 21300000, guid: 7a433ef486136844e9f1ad0d72aa66e4, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 1c8a955ca5a02614ab97f84ea2f21f66, type: 3}
   - {fileID: 21300000, guid: e27fbccc7ebab744c8b2bee38e003064, type: 3}

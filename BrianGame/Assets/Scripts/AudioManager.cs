@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip CheeringClip;
 
     public List<AudioClip> Num_Clip = new List<AudioClip>();
+    public List<AudioClip> GameAudioClips = new List<AudioClip>();
 
     private void Awake()
     {
@@ -238,6 +239,17 @@ public class AudioManager : MonoBehaviour
         }
 
         PlayAudioClip(clip);
+    }
+
+    public void Play_Game_AudioClip(string id)
+    {
+        for(int i = 0; i < GameAudioClips.Count; i++)
+        {
+            if(GameAudioClips[i].name == id)
+            {
+                PlayAudioClip(GameAudioClips[i]);
+            }
+        }
     }
 
     

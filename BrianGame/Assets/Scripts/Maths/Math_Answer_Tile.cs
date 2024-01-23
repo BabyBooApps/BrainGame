@@ -57,7 +57,7 @@ public class Math_Answer_Tile : MonoBehaviour
                 Debug.Log("Answer Matched Successfully");
                 this.transform.position = obj.transform.position;
                 drag_Obj.CanMove = false;
-                GamePlayManager.Instance.Math_Level.OnAnswerValidated();
+                GamePlayManager.Instance.Math_Level.OnAnswerValidated(getId());
             }else
             {
                 AudioManager.Instance.PlayFailClip();

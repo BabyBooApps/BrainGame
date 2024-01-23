@@ -11,6 +11,7 @@ public class Puzzle_Level : MonoBehaviour
     public GameObject Drag_Objects_Container;
     public int id;
     public int TargetScore = 0;
+    public Puzzle_Tile Current_Puzzle_Level;
 
     public void InitializeLevel(int level)
     {
@@ -74,6 +75,8 @@ public class Puzzle_Level : MonoBehaviour
     {
         for(int i = 0; i < Puzzle_Tiles_Target_Pos.Count; i++)
         {
+            Current_Puzzle_Level = Puzzle_Tiles_List[puzzle_no];
+
             float alpha = 75;
             if (severity == 0)
             {

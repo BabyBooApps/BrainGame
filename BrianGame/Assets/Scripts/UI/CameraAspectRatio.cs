@@ -4,38 +4,99 @@ using UnityEngine;
 
 public class CameraAspectRatio : MonoBehaviour
 {
-    // Set the default orthographic size for a 16:9 portrait aspect ratio
-    public float defaultOrthoSize = 7f;
+    //16:10     - 5.5
+    //16:9      - 5.5
+    //18:9      - 5
+    //19:9      - 5
+    //19.5 : 9  - 5
+    //20 :9     - 4.5
+    //21:18     - 8
+    //23:9      - 5
 
-    private Camera mainCamera;
-    private Vector2 referenceAspectRatio = new Vector2(21f, 18f); // Reference aspect ratio (16:9 portrait)
 
-    private void Start()
+    public float defaultCameraSize = 5.5f;
+
+    void Start()
     {
-        mainCamera = Camera.main;
+        StartCoroutine(AdjustCameraSize());
+    }
 
-        if (mainCamera == null)
+    IEnumerator AdjustCameraSize()
+    {
+        yield return new WaitForEndOfFrame();
+
+        float aspectRatio = (float)Screen.width / Screen.height;
+
+        float newSize = defaultCameraSize;
+
+        if (Mathf.Approximately(aspectRatio, 16f / 10f) || Mathf.Approximately(aspectRatio, 16f / 9f))
         {
-            Debug.LogError("No main camera found in the scene.");
-            return;
+            newSize = 5.5f;
+        }
+        else if (Mathf.Approximately(aspectRatio, 18f / 9f) || Mathf.Approximately(aspectRatio, 19f / 9f) || Mathf.Approximately(aspectRatio, 19.5f / 9f))
+        {
+            newSize = 5f;
+        }
+        else if (Mathf.Approximately(aspectRatio, 20f / 9f))
+        {
+            newSize = 4.5f;
+        }
+        else if (Mathf.Approximately(aspectRatio, 21f / 18f))
+        {
+            newSize = 8f;
+        }
+        else if (Mathf.Approximately(aspectRatio, 23f / 9f))
+        {
+            newSize = 5f;
+        }
+        else
+        {
+            // Find the nearest aspect ratio and set the camera size accordingly
+            float[] validAspectRatios = { 16f / 10f, 16f / 9f, 18f / 9f, 19f / 9f, 19.5f / 9f, 20f / 9f, 21f / 18f, 23f / 9f };
+            float closestAspectRatio = FindClosestAspectRatio(aspectRatio, validAspectRatios);
+            newSize = GetCameraSizeForAspectRatio(closestAspectRatio);
         }
 
-        // Calculate the screen's current aspect ratio
-        float currentAspectRatio = (float)Screen.width / Screen.height;
+        Camera.main.orthographicSize = newSize;
+    }
 
-        // Calculate the desired orthographic size
-        float desiredSize = defaultOrthoSize;
+    float FindClosestAspectRatio(float targetAspectRatio, float[] validAspectRatios)
+    {
+        float closestRatio = validAspectRatios[0];
+        float minDifference = Mathf.Abs(targetAspectRatio - closestRatio);
 
-        if (currentAspectRatio != 0)
+        foreach (float ratio in validAspectRatios)
         {
-            // Calculate the aspect ratio difference
-            float aspectRatioDiff = referenceAspectRatio.x / referenceAspectRatio.y - currentAspectRatio;
-
-            // Adjust the orthographic size based on the aspect ratio difference
-            desiredSize += aspectRatioDiff;
+            float difference = Mathf.Abs(targetAspectRatio - ratio);
+            if (difference < minDifference)
+            {
+                closestRatio = ratio;
+                minDifference = difference;
+            }
         }
 
-        // Set the camera's orthographic size
-        mainCamera.orthographicSize = desiredSize;
+        return closestRatio;
+    }
+
+    float GetCameraSizeForAspectRatio(float aspectRatio)
+    {
+        switch (aspectRatio)
+        {
+            case 16f / 10f:
+            case 16f / 9f:
+                return 5.5f;
+            case 18f / 9f:
+            case 19f / 9f:
+            case 19.5f / 9f:
+                return 5f;
+            case 20f / 9f:
+                return 4.5f;
+            case 21f / 18f:
+                return 8f;
+            case 23f / 9f:
+                return 5f;
+            default:
+                return defaultCameraSize;
+        }
     }
 }

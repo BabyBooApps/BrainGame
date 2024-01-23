@@ -73,15 +73,29 @@ public class PuzzleManager : MonoBehaviour
 
         if(Score >= Active_Level.TargetScore)
         {
-            AudioManager.Instance.PlayLevelCompleteClip();
+
             Debug.Log("level Completed Successfully");
-            PuzzleIndex++;
-            Next_Item.gameObject.SetActive(true);
-            
-        }else
+            StartCoroutine(Level_Complete());
+
+        }
+        else
         {
             Debug.Log("Move on to next card");
         }
+    }
+
+    public IEnumerator Level_Complete()
+    {
+        yield return new WaitForSeconds(0.5f);
+        iTween.ShakeRotation(Active_Level.gameObject, new Vector3(0, 0, 45), 1.5f);
+        AudioManager.Instance.Play_Cheering_Clip();
+        yield return new WaitForSeconds(1.5f);
+        AudioManager.Instance.Play_Game_AudioClip(Active_Level.Current_Puzzle_Level.Puzzle_Id);
+        
+        PuzzleIndex++;
+        yield return new WaitForSeconds(1.5f);
+        AudioManager.Instance.PlayLevelCompleteClip();
+        Next_Item.gameObject.SetActive(true);
     }
 
 

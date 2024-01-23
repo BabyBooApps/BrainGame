@@ -31,6 +31,8 @@ public class Maths_Level : MonoBehaviour
     public List<Sprite> BG_List;
     public SpriteRenderer Bg_Renderer;
 
+    public int Current_Multiplier = 1;
+
     private void Start()
     {
        // addition_Level = FindAnyObjectByType(typeof(Addition_Level)) as Addition_Level;
@@ -217,6 +219,7 @@ public class Maths_Level : MonoBehaviour
             //Question_Elements.Add(Utilities.GetRandomNumber(1, num1));
         }else if (MathType == "*")
         {
+            num1 = Current_Multiplier;
             num2 = Multiplication_Level.Multiplier;
             Question_Elements.Add(num2);
             Question_Elements.Add(num1);
@@ -241,10 +244,19 @@ public class Maths_Level : MonoBehaviour
 
     }
 
-    public void OnAnswerValidated()
+    public void OnAnswerValidated(int id)
     {
+        if (MathType == "*")
+        {
+            Current_Multiplier++;
+            if(Current_Multiplier > 10)
+            {
+                Current_Multiplier = 1;
+            }
+        }
         resultObj.gameObject.SetActive(true);
-        AudioManager.Instance.PlayLevelCompleteClip();
+        AudioManager.Instance.Play_Num_Clip(id);
+        
         StartCoroutine(AnimateResult());
 
 
@@ -252,6 +264,9 @@ public class Maths_Level : MonoBehaviour
 
     public IEnumerator AnimateResult()
     {
+        yield return new WaitForSeconds(1.0f);
+        AudioManager.Instance.Play_Cheering_Clip();
+        
         yield return resultObj.AnimateResult();
         AudioManager.Instance.PlayNextLevelClip();
         clearSpawnedObjects();
@@ -324,6 +339,7 @@ public class Maths_Level : MonoBehaviour
 
     public void DisableLevel()
     {
+        Current_Multiplier = 1;
         loadingAnimation.ResetLoading();
         resultObj.ResetScreen();
         clearSpawnedObjects();

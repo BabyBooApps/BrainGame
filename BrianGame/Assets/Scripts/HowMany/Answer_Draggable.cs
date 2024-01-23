@@ -49,7 +49,8 @@ public class Answer_Draggable : MonoBehaviour
                 Debug.Log("Matched Successfully");
                 isAnswered = true;
                 this.transform.position = Target_Ans.transform.position;
-                GamePlayManager.Instance.HowMany_Scene.OnAnswerMatched();
+                
+                GamePlayManager.Instance.HowMany_Scene.OnAnswerMatched(Id);
             }else
             {
                 Debug.Log("Not Matched");
