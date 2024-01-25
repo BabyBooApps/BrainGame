@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 15
   m_EditorClassIdentifier: 
   Puzzle_Id: Lion
+  FInal_Image: {fileID: 21300000, guid: bbe28fc63c2e2b847a808fe727750576, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 461204fe59fd13e47b44838ac4281e7e, type: 3}
   - {fileID: 21300000, guid: 2397228ccf96c8e4a93db7996a8c3dc2, type: 3}

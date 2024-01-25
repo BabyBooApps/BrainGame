@@ -71,7 +71,7 @@ public class MatchingScene : MonoBehaviour
 
        
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 3; i++)
         {
             MatchingObject obj = Matching_Objects_List[StartingCount + i];
             TempMatchObjectList.Add(obj);
@@ -136,7 +136,7 @@ public class MatchingScene : MonoBehaviour
 
        
         MatchCount++;
-        if (MatchCount >= 4)
+        if (MatchCount >= 3)
         {
             AudioManager.Instance.PlayLevelCompleteClip();
             Debug.Log("Game Successful");

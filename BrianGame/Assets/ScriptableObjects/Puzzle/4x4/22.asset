@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 22
   m_EditorClassIdentifier: 
-  Puzzle_Id: Aligator
+  Puzzle_Id: Crocodile
+  FInal_Image: {fileID: 21300000, guid: 9e7bac5fcb5cea642ae920cae7a5ee3a, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 032f784b7081a3f4bb4f96b80512c9e2, type: 3}
   - {fileID: 21300000, guid: 7a351822c1f7bb643bbe7a02b15f2bb6, type: 3}

@@ -13,6 +13,8 @@ public class Puzzle_Level : MonoBehaviour
     public int TargetScore = 0;
     public Puzzle_Tile Current_Puzzle_Level;
 
+    public GameObject Final_Image;
+
     public void InitializeLevel(int level)
     {
         Init_Puzzle_Tiles();
@@ -67,6 +69,7 @@ public class Puzzle_Level : MonoBehaviour
 
     public void Initiate_Puzzle(int no , int severity)
     {
+        Final_Image.gameObject.SetActive(false);
         Set_Puzzle_Backgrounds(no,severity);
         SetDraggingObj_Backgrounds(no);
     }
@@ -76,6 +79,7 @@ public class Puzzle_Level : MonoBehaviour
         for(int i = 0; i < Puzzle_Tiles_Target_Pos.Count; i++)
         {
             Current_Puzzle_Level = Puzzle_Tiles_List[puzzle_no];
+            Set_Final_Image(Current_Puzzle_Level.FInal_Image);
 
             float alpha = 75;
             if (severity == 0)
@@ -101,10 +105,21 @@ public class Puzzle_Level : MonoBehaviour
         }
     }
 
-    public void ResetLevel()
+    public void Set_Final_Image(Sprite sp)
     {
        
-        for(int i = 0;  i < Dragging_Tile.Count; i++ )
+        Final_Image.GetComponent<SpriteRenderer>().sprite = sp;
+    }
+
+    public void Enable_Final_Image()
+    {
+        Final_Image.gameObject.SetActive(true);
+    }
+
+    public void ResetLevel()
+    {
+        Final_Image.gameObject.SetActive(false);
+        for (int i = 0;  i < Dragging_Tile.Count; i++ )
         {
             Dragging_Tile[i].ResetTile();
         }

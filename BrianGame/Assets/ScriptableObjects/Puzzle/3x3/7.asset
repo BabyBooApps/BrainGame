@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 7
   m_EditorClassIdentifier: 
   Puzzle_Id: Eagle
+  FInal_Image: {fileID: 21300000, guid: 545ad74c4dcd2aa49a6071652087b06e, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 1f51818a3f0cdb54da87f6d75597afd2, type: 3}
   - {fileID: 21300000, guid: 7993454e56601874893dd09ef03f41d9, type: 3}

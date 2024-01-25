@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 11
   m_EditorClassIdentifier: 
+  Puzzle_Id: Deer
+  FInal_Image: {fileID: 21300000, guid: 287ac9fa5fad49c4f835f1bec9fed1ac, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 3dab31574029de347bc6cc5f341e3e14, type: 3}
   - {fileID: 21300000, guid: 4473923cc3c91984faf2e844b1ef492a, type: 3}

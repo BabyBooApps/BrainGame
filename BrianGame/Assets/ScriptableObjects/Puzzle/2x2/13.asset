@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 13
   m_EditorClassIdentifier: 
   Puzzle_Id: Bear
+  FInal_Image: {fileID: 21300000, guid: 939748d0556b2c2498707711ef441382, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 6e34ee76e3f306546a7d8611bc1327bd, type: 3}
   - {fileID: 21300000, guid: 23e6227aad1a63047bf3d36140e2732d, type: 3}

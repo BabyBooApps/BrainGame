@@ -245,7 +245,7 @@ public class AudioManager : MonoBehaviour
     {
         for(int i = 0; i < GameAudioClips.Count; i++)
         {
-            if(GameAudioClips[i].name == id)
+            if(GameAudioClips[i].name.ToUpper() == id.ToUpper())
             {
                 PlayAudioClip(GameAudioClips[i]);
             }

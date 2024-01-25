@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 16
   m_EditorClassIdentifier: 
   Puzzle_Id: deer
+  FInal_Image: {fileID: 21300000, guid: 7e982e8f206895d4e9afcd9b70c793ce, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 5ea6454f78502a94a94e2ec2e6001c98, type: 3}
   - {fileID: 21300000, guid: 5a3792323b14eef4d988a66c9ed56e28, type: 3}

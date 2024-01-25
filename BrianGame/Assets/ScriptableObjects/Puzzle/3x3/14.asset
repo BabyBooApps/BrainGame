@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 14
   m_EditorClassIdentifier: 
   Puzzle_Id: Monkey
+  FInal_Image: {fileID: 21300000, guid: 8c1a14998a66db840812574723e579c0, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 295d6d94780991c449ac6cc5ae914ac3, type: 3}
   - {fileID: 21300000, guid: 3dfb65bb27dbade469f666090ab94eeb, type: 3}

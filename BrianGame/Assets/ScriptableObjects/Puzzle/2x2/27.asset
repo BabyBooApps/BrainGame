@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f71cadd907a124d953031610fdc75d, type: 3}
   m_Name: 27
   m_EditorClassIdentifier: 
-  Puzzle_Id: Knagaroo
+  Puzzle_Id: Kangaroo
+  FInal_Image: {fileID: 21300000, guid: 307a32d32f79ff1419dd0752a940a76a, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: a8499f0845be39e4794a3d70d45c9440, type: 3}
   - {fileID: 21300000, guid: af082deedf8f8d546addaf0d7ffff2ea, type: 3}

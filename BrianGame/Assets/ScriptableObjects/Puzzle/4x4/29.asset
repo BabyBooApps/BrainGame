@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 29
   m_EditorClassIdentifier: 
   Puzzle_Id: panda
+  FInal_Image: {fileID: 21300000, guid: 857333702c5922549ac953e6aa3d2cad, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 2b829a44d013e1045a60afbccd865e29, type: 3}
   - {fileID: 21300000, guid: 363ae43a457c1a34592085975864e461, type: 3}

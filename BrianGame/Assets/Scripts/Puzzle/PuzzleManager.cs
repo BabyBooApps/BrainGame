@@ -86,12 +86,14 @@ public class PuzzleManager : MonoBehaviour
 
     public IEnumerator Level_Complete()
     {
-        yield return new WaitForSeconds(0.5f);
-        iTween.ShakeRotation(Active_Level.gameObject, new Vector3(0, 0, 45), 1.5f);
-        AudioManager.Instance.Play_Cheering_Clip();
         yield return new WaitForSeconds(1.5f);
+        Active_Level.Enable_Final_Image();
         AudioManager.Instance.Play_Game_AudioClip(Active_Level.Current_Puzzle_Level.Puzzle_Id);
-        
+        yield return new WaitForSeconds(1.0f);
+        iTween.PunchScale(Active_Level.gameObject, new Vector3(1.1f, 1.1f,1.1f), 1.5f);
+        AudioManager.Instance.Play_Cheering_Clip();
+        yield return new WaitForSeconds(3.0f);
+       
         PuzzleIndex++;
         yield return new WaitForSeconds(1.5f);
         AudioManager.Instance.PlayLevelCompleteClip();

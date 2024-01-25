@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 16
   m_EditorClassIdentifier: 
   Puzzle_Id: giraffe
+  FInal_Image: {fileID: 21300000, guid: 2f7464cb6fec6e94fb87cd726170a5ab, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 3bbbd23d38db8d149bb23f3cdc4accf2, type: 3}
   - {fileID: 21300000, guid: 2ac4eec6f42a3f04caf89cbb34b5089c, type: 3}

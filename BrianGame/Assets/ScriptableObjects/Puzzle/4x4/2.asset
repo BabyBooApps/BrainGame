@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   Puzzle_Id: ostrich
+  FInal_Image: {fileID: 21300000, guid: 9b0374cc9ba519b4c98e86e7139bb10f, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 58095262257e08d4fb3fde11260d1fb7, type: 3}
   - {fileID: 21300000, guid: ab8000740763d0f4fb0c505d05bf18a0, type: 3}

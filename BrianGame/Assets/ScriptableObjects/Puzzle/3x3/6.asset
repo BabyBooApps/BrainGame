@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   Puzzle_Id: Parrot
+  FInal_Image: {fileID: 21300000, guid: cc62fd3cf98b0e8448131ac68c0bf3d6, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: ea68640608cfb6047b4e9ee974eb074c, type: 3}
   - {fileID: 21300000, guid: c01f8fc1069841d4fa36513342b5f5bc, type: 3}

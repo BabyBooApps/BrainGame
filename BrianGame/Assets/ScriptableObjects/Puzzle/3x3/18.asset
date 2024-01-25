@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 18
   m_EditorClassIdentifier: 
   Puzzle_Id: turtle
+  FInal_Image: {fileID: 21300000, guid: 6d842a157b4021f46b79531fb6300fdf, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 39415c7fe70482c45a81608d8961ae3e, type: 3}
   - {fileID: 21300000, guid: 86d71e8c282d8344fbadb2433013d666, type: 3}

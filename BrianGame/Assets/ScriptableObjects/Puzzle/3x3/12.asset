@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 12
   m_EditorClassIdentifier: 
   Puzzle_Id: Elephant
+  FInal_Image: {fileID: 21300000, guid: 5b2e6b35c61311d4989795976074f241, type: 3}
   puzzle_Sprites_List:
   - {fileID: 21300000, guid: 63e7ca49e36926c49b1dae44c54e3221, type: 3}
   - {fileID: 21300000, guid: 8df93a1d0f1b7af4488a5b65186f7751, type: 3}
