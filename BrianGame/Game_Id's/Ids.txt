@@ -1,0 +1,8 @@
+KeyStore:
+Password : BabyBooApps@3306
+Alias : braingame
+Password : BabyBooApps@3306
+FirstAndLastName: BabyBooApps
+City:Visakhpatnam
+State:Andhrapradesh
+CountryCode : +91
