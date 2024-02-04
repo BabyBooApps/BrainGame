@@ -130,6 +130,7 @@ public class UI_Manager : MonoBehaviour
     public void BackToHome()
     {
         HomeScreen.gameObject.SetActive(true);
+        
     }
 
     public void BackToMenu()

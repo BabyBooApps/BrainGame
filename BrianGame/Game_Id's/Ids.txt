@@ -6,3 +6,9 @@ FirstAndLastName: BabyBooApps
 City:Visakhpatnam
 State:Andhrapradesh
 CountryCode : +91
+
+Ads :
+Admob Id: ca-app-pub-6727597482466175~4578913416
+Banner : ca-app-pub-6727597482466175/1940894365
+Intertitial : ca-app-pub-6727597482466175/9627812692
+Rewarded Video :ca-app-pub-6727597482466175/5704045400

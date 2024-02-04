@@ -75,10 +75,10 @@ public class InterstitialAdController : MonoBehaviour
     /// </summary>
     public void ShowAd()
     {
-        /*if (PlayerPrefs_Manager.Instance.GetNoAdsStatus())
+        if (PlayerPrefsManager.Instance.GetNoAdsStatus())
         {
             return;
-        }*/
+        }
 
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {

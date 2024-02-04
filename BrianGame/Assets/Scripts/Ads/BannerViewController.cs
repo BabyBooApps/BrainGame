@@ -70,10 +70,10 @@ public class BannerViewController : MonoBehaviour
     /// </summary>
     public void ShowAd()
     {
-       /* if (PlayerPrefs_Manager.Instance.GetNoAdsStatus())
+        if (PlayerPrefsManager.Instance.GetNoAdsStatus())
         {
             return;
-        }*/
+        }
 
         if (_bannerView != null)
         {
