@@ -20,6 +20,11 @@ public class Puzzle_Tile_Drag : MonoBehaviour
         drag_script = GetComponent<DraggableObject>();
     }
 
+    public void SetInitialPos(Vector3 pos)
+    {
+        initialPos = pos;
+    }
+
     public void ResetTile()
     {
         this.transform.position = initialPos;

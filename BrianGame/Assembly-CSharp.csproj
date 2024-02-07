@@ -118,8 +118,10 @@
     <Compile Include="Assets\Scripts\LoadingCircle.cs" />
     <Compile Include="Assets\ScriptableObjects\Math\Math_Item.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
+    <Compile Include="Assets\Scripts\IAP\InAppRewards.cs" />
     <Compile Include="Assets\Scripts\UI\MenuScreen\MenuButton.cs" />
     <Compile Include="Assets\Scripts\Ads\AdmobAdsScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
     <Compile Include="Assets\Scripts\UI\HorizontalMovementAnimation.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline.cs" />
     <Compile Include="Assets\Scripts\Maths\DynamicGridManager.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
     <Compile Include="Assets\Scripts\UI\UI_HomeScreen.cs" />
     <Compile Include="Assets\Scripts\Maths\Math_Target_Answer.cs" />
+    <Compile Include="Assets\Scripts\IAP\IAP_Manager.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\Scripts\Ads\BannerViewController.cs" />
@@ -155,9 +158,6 @@
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\Data\GameData.cs" />
-    <Compile Include="Assets\Scripts\IAP\IAP_Manager.cs" />
-    <Compile Include="Assets\Scripts\IAP\InAppRewards.cs" />
-    <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -7,6 +7,7 @@ public class Puzzle_Level : MonoBehaviour
     public List<Puzzle_Target_Tile> Puzzle_Tiles_Target_Pos = new List<Puzzle_Target_Tile>();
     public List<Puzzle_Tile> Puzzle_Tiles_List = new List<Puzzle_Tile>();
     public List<Puzzle_Tile_Drag> Dragging_Tile = new List<Puzzle_Tile_Drag>();
+    public List<Vector3> DragginTilesPosList = new List<Vector3>();
     public GameObject TilesContainer;
     public GameObject Drag_Objects_Container;
     public int id;
@@ -53,17 +54,21 @@ public class Puzzle_Level : MonoBehaviour
 
     public void SetDraggingObject()
     {
+        DragginTilesPosList.Clear();
         foreach (Transform child in Drag_Objects_Container.transform)
         {
             Puzzle_Tile_Drag tile = child.GetComponent<Puzzle_Tile_Drag>();
             if (tile != null)
             {
                 Dragging_Tile.Add(tile);
+                DragginTilesPosList.Add(tile.transform.position);
+               
             }
 
-             Dragging_Tile.Shuffle();
         }
 
+        Dragging_Tile =  Dragging_Tile.Shuffle();
+        DragginTilesPosList = DragginTilesPosList.Shuffle();
 
     }
 
@@ -119,11 +124,18 @@ public class Puzzle_Level : MonoBehaviour
     public void ResetLevel()
     {
         Final_Image.gameObject.SetActive(false);
+        DragginTilesPosList.Shuffle();
         for (int i = 0;  i < Dragging_Tile.Count; i++ )
         {
             Dragging_Tile[i].ResetTile();
+            Dragging_Tile[i].transform.position = DragginTilesPosList[i];
+            Dragging_Tile[i].SetInitialPos(DragginTilesPosList[i]);
         }
+        Dragging_Tile.Shuffle();
+        DragginTilesPosList.Shuffle();
         
+
+
         //Puzzle_Tiles_Target_Pos.Clear();
     }
 

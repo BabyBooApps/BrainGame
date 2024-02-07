@@ -11,12 +11,14 @@ public static class Utilities
     public static List<T> Shuffle<T>(this List<T> list)
     {
         int n = list.Count;
-        List<T> shuffledList = new List<T>(list); // Create a new list to hold the shuffled elements.
+        List<T> shuffledList = new List<T>(list);
+
+        System.Random rand = new System.Random();
 
         for (int i = n - 1; i > 0; i--)
         {
             // Generate a random index between 0 and i (inclusive).
-            int j = Random.Range(0, i + 1);
+            int j = rand.Next(0, i + 1);
 
             // Swap elements at indices i and j.
             T temp = shuffledList[i];
