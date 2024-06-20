@@ -29,4 +29,14 @@ public class UI_HomeScreen : UI_Screen
         NoAdsBtn.gameObject.SetActive(!PlayerPrefsManager.Instance.GetNoAdsStatus());
     }
 
+    public void On_Moregames_Button_Click()
+    {
+        Application.OpenURL("https://play.google.com/store/apps/dev?id=6487105028651572662");
+    }
+
+    public void On_Rating_Btn_Click()
+    {
+        Application.OpenURL("https://play.google.com/store/apps/details?id=com.babybooapps.braingame");
+    }
+
 }
